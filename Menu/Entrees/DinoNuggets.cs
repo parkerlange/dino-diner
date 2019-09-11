@@ -24,6 +24,7 @@ namespace DinoDiner.Menu.Entrees
             this.Price = 4.25;
             this.Calories = 354;
         }
+
         public void AddNugget()
         {
             this.Price += .25;

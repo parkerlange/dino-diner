@@ -17,7 +17,7 @@ namespace MenuTest.Entrees
         public void ShouldHaveCorrectDefaultCalories()
         {
             DinoNuggets dn = new DinoNuggets();
-            Assert.Equal<uint>(59*6, dn.Calories);
+            Assert.Equal<uint>(59 * 6, dn.Calories);
         }
 
 
@@ -28,14 +28,14 @@ namespace MenuTest.Entrees
             List<string> ingredients = dn.Ingredients;
             // Should be six nuggets
             int nuggetCount = 0;
-            foreach(string ingredient in ingredients)
+            foreach (string ingredient in ingredients)
             {
                 if (ingredient.Equals("Chicken Nugget")) nuggetCount++;
             }
             Assert.Equal(6, nuggetCount);
             Assert.Equal<int>(6, ingredients.Count);
         }
-
+        [Fact]
         public void AddingNuggetsShouldAddIngredients()
         {
             DinoNuggets dn = new DinoNuggets();
@@ -60,7 +60,7 @@ namespace MenuTest.Entrees
             Assert.Equal<int>(8, dn.Ingredients.Count);
 
         }
-
+        [Fact]
         public void AddingNuggetsShouldIncreasePrice()
         {
             DinoNuggets dn = new DinoNuggets();
@@ -71,24 +71,16 @@ namespace MenuTest.Entrees
             dn.AddNugget();
             Assert.Equal(dn.Price, 5.0);
         }
-
+        [Fact]
         public void AddingNuggetsShouldIncreaseCalories()
         {
             DinoNuggets dn = new DinoNuggets();
             dn.AddNugget();
-<<<<<<< HEAD
-            Assert.Equal(dn.Calories, (uint)59*7);
-            dn.AddNugget();
-            Assert.Equal(dn.Calories, (uint)59*8);
-            dn.AddNugget();
-            Assert.Equal(dn.Calories, (uint)59*9);
-=======
-            Assert.Equal<unit>(dn.Calories, 59*7);
+            Assert.Equal<uint>(dn.Calories, 59*7);
             dn.AddNugget();
             Assert.Equal<uint>(dn.Calories, 59*8);
             dn.AddNugget();
-            Assert.Equal<unit>(dn.Calories, 59*9);
->>>>>>> b6962bb1aa04a8c7951f315141d461c9d6342a91
+            Assert.Equal<uint>(dn.Calories, 59*9);
         }
     }
 }
