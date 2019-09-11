@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class PterodactylWings
+    public class PterodactylWings
     {
         public double Price { get; set; }
         public uint Calories { get; set; }

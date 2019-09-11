@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees; 
 
 namespace DinoDiner.Menu.Entrees
 {
-    class DinoNuggets
+    public class DinoNuggets
     {
         public double Price { get; set; }
         public uint Calories { get; set; }

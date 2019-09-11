@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    class Brontowurst
+    public class Brontowurst
     {
         private bool bun = true;
         private bool peppers = true;
@@ -17,7 +17,7 @@ namespace DinoDiner.Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Brontowurst" };
+                List<string> ingredients = new List<string>() { "Brautwurst" };
                 if (bun) ingredients.Add("Whole Wheat Bun");
                 if (peppers) ingredients.Add("Peppers");
                 if (onion) ingredients.Add("Onion");
