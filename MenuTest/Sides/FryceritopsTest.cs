@@ -1,5 +1,4 @@
-﻿/*
-using Xunit;
+﻿using Xunit;
 using DinoDiner.Menu.Sides;
 
 namespace MenuTest.Sides
@@ -86,4 +85,3 @@ namespace MenuTest.Sides
         }
     }
 }
-*/
