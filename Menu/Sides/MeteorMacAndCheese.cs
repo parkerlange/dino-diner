@@ -6,8 +6,16 @@ namespace DinoDiner.Menu.Sides
 {
     public class MeteorMacAndCheese : Side
     {
+        /// <summary>
+        /// This is a Size enumerations used to set the size of order
+        /// </summary>
         private Size size;
 
+        /// <summary>
+        /// This is an override for the Size, based on the size, the calories
+        /// and the price are set differently. We use a private backing for the size 
+        /// in order to modify it 
+        /// </summary>
         public override Size Size
         {
             set
