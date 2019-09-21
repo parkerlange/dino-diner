@@ -9,12 +9,14 @@ namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// this is the class to create the brontowurst to the users selections
+    /// inherited from entree base class
     /// </summary>
     public class Brontowurst : Entree
     {
 
         /// <summary>
         /// This is the public constructor Brontowurst, this sets price and calories
+        /// it also adds all of the ingredients to the menu item
         /// </summary>
         public Brontowurst()
         {

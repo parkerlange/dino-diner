@@ -1,9 +1,15 @@
-﻿using System;
+﻿/* Fryceritops.cs
+ * Author: Parker Lange
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// This is the class for the food item Fryceritops, it uses the side class for its menu items
+    /// </summary>
     public class Fryceritops : Side
     {
         /// <summary>
@@ -44,6 +50,12 @@ namespace DinoDiner.Menu.Sides
                 return size;
             }
         }
+
+        /// <summary>
+        /// This is the constructor for Fryceritops
+        /// This sets the price, calories, and adds all items to the 
+        /// ingredients of the menu item
+        /// </summary>
         public Fryceritops()
         {
             Price = 0.99;

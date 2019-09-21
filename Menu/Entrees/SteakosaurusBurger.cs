@@ -9,11 +9,13 @@ namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// this class constructs the burger based on user settings
+    /// inherited from entree base class
     /// </summary>
     public class SteakosaurusBurger : Entree
     {
         /// <summary>
         /// constructor for the burger, sets price and calories
+        /// it also adds all of the ingredients to the menu item
         /// </summary>
         public SteakosaurusBurger()
         {

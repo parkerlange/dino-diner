@@ -8,11 +8,13 @@ namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// this is the class for the food item PBJ
+    /// inherited from entree base class
     /// </summary>
     public class PrehistoricPBJ : Entree
     {
         /// <summary>
         /// this is the constructor setting the price and calories
+        /// it also adds all of the ingredients to the menu item
         /// </summary>
         public PrehistoricPBJ()
         {

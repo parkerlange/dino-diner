@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Triceritots.cs
+ * Author: Parker Lange
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -47,6 +50,12 @@ namespace DinoDiner.Menu.Sides
                 return size; 
             }
         }
+
+        /// <summary>
+        /// This is the constructor for Triceritots
+        /// This sets the price, calories, and adds all items to the 
+        /// ingredients of the menu item
+        /// </summary>
         public Triceritots()
         {
             Price = 0.99;

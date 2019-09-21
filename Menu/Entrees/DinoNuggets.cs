@@ -9,6 +9,7 @@ namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// This is the class for the food item DinoNuggets
+    /// inherited from entree base class
     /// </summary>
     public class DinoNuggets : Entree
     {
@@ -19,6 +20,7 @@ namespace DinoDiner.Menu.Entrees
 
         /// <summary>
         /// Constructor for dino nuggets, sets price and calories
+        /// it also adds all of the ingredients to the menu item
         /// </summary>
         public DinoNuggets()
         {

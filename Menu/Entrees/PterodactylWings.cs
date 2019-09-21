@@ -9,11 +9,13 @@ namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// this class is used to order wings based on user selections
+    /// inherited from entree base class
     /// </summary>
     public class PterodactylWings : Entree
     {
         /// <summary>
         /// this is the constructor for the wings, price and calories are set
+        /// it also adds all of the ingredients to the menu item
         /// </summary>
         public PterodactylWings()
         {

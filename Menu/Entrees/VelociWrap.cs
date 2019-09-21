@@ -8,12 +8,13 @@ using System.Text;
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// this is a class to construct the food item velociwrap
+    /// this is a class to construct the food item velociwrap based off an inherited Entree class
     /// </summary>
     public class VelociWrap : Entree
     {
         /// <summary>
         /// this is the constructor for the wrap, it sets price and calories
+        /// it also adds all of the ingredients to the menu item
         /// </summary>
         public VelociWrap()
         {
@@ -25,6 +26,7 @@ namespace DinoDiner.Menu.Entrees
             ingredients.Add("Romaine Lettuce");
             ingredients.Add("Parmesan Cheese");
         }
+
         /// <summary>
         /// method for holding dressing from the wrap
         /// </summary>
@@ -32,6 +34,7 @@ namespace DinoDiner.Menu.Entrees
         {
             ingredients.Remove("Ceasar Dressing");
         }
+
         /// <summary>
         /// method to hold lettuce, and not add to the wrap
         /// </summary>
@@ -39,6 +42,7 @@ namespace DinoDiner.Menu.Entrees
         {
             ingredients.Remove("Romaine Lettuce");
         }
+
         /// <summary>
         /// method to hold cheese from the wrap
         /// </summary>
