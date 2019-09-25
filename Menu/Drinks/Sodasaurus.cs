@@ -4,25 +4,18 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public enum SodasaurusFlavor
-    {
-        Cola, 
-        Orange, 
-        Vanilla, 
-        Chocolate, 
-        RootBeer, 
-        Cherry, 
-        Lime
-    }
-
     public class Sodasaurus : Drink
     {
-        public SodasaurusFlavor Flavor; 
+        private SodasaurusFlavor flavor; 
+        public SodasaurusFlavor Flavor {
+            get { return flavor; }
+            set { flavor = value; }
+        }
 
         /// <summary>
         /// This is a Size enumerations used to set the size of order
         /// </summary>
-        private Size size;
+        private Size size; 
 
         /// <summary>
         /// This is an override for the Size, based on the size, the calories

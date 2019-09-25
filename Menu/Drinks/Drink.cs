@@ -4,13 +4,6 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    }
-
     public abstract class Drink
     {
         /// <summary>
