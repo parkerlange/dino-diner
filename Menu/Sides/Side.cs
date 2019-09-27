@@ -7,17 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Sides
-{
-    /// <summary>
-    /// Size enumeration. This is used to determine the size of the side the user wants
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
-    
+{   
     /// <summary>
     /// this is our base abract Side class
     /// </summary>

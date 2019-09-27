@@ -78,7 +78,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultCalories()
         {
             Sodasaurus soda = new Sodasaurus();
-            Assert.Equal<double>(112, soda.Calories);
+            Assert.Equal<uint>(112, soda.Calories);
         }
 
         [Fact]
@@ -106,13 +106,41 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void ShouldHaveCorrectCaloriesAfterSettingSmall()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Medium;
+            soda.Size = Size.Small;
+            Assert.Equal<uint>(112, soda.Calories);
+        }
+        [Fact]
         public void ShouldHaveCorrectPriceAfrerSettingMedium()
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = Size.Medium;
             Assert.Equal<double>(2.00, soda.Price);
         }
-
+        [Fact]
+        public void ShouldHaveCorrectCaloriesAfterSettingMedium()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Medium;
+            Assert.Equal<uint>(156, soda.Calories);
+        }
+        [Fact]
+        public void ShouldHaveCorrectPriceAfrerSettingLarge()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Large;
+            Assert.Equal<double>(2.50, soda.Price);
+        }
+        [Fact]
+        public void ShouldHaveCorrectCaloriesAfterSettingLarge()
+        {
+            Sodasaurus soda = new Sodasaurus();
+            soda.Size = Size.Large;
+            Assert.Equal<uint>(208, soda.Calories);
+        }
         //That invoking HoldIce() results in the Ice property being false.
         [Fact]
         public void ShouldHaveCorrectIceAfterInvokingHoldIce()
