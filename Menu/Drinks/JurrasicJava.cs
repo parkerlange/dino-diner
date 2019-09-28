@@ -4,18 +4,15 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Sodasaurus : Drink
+    public class JurrasicJava : Drink
     {
-        private SodasaurusFlavor flavor; 
-        public SodasaurusFlavor Flavor {
-            get { return flavor; }
-            set { flavor = value; }
-        }
+        public bool roomForCream { get; set; } = false;
+        public bool decaf { get; set; } = false; 
 
         /// <summary>
         /// This is a Size enumerations used to set the size of order
         /// </summary>
-        private Size size; 
+        private Size size;
 
         /// <summary>
         /// This is an override for the Size, based on the size, the calories
@@ -31,16 +28,16 @@ namespace DinoDiner.Menu.Drinks
                 switch (size)
                 {
                     case Size.Small:
-                        Price = 1.50;
-                        Calories = 112;
+                        Price = 0.59;
+                        Calories = 2;
                         break;
                     case Size.Medium:
-                        Price = 2.00;
-                        Calories = 156;
+                        Price = 0.99;
+                        Calories = 4;
                         break;
                     case Size.Large:
-                        Price = 2.50;
-                        Calories = 208;
+                        Price = 1.49;
+                        Calories = 8;
                         break;
                 }
             }
@@ -51,15 +48,29 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
-        public Sodasaurus()
+        public  JurrasicJava()
         {
-            Price = 1.50;
-            Calories = 112;
+            Price = 0.59;
+            Calories = 2;
             size = Size.Small;
+            Ice = false;
             ingredients.Add("Water");
-            ingredients.Add("Natural Flavors");
-            ingredients.Add("Cane Sugar");
+            ingredients.Add("Coffee");
+        }
+
+        public void AddIce()
+        {
             Ice = true; 
+        }
+
+        public void LeaveRoomForCream()
+        {
+            roomForCream = true; 
+        }
+
+        public void Decafinate()
+        {
+            decaf = true; 
         }
     }
 }

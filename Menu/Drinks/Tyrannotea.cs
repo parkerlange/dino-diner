@@ -79,6 +79,7 @@ namespace DinoDiner.Menu.Drinks
         {
             Price = 0.99;
             Calories = 8;
+            size = Size.Small;
             ingredients.Add("Water");
             ingredients.Add("Tea");
             Sweet = false;
