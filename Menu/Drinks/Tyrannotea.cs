@@ -1,14 +1,30 @@
-﻿using System;
+﻿/* Tyrannotea.cs
+ * Author: Parker Lange
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// this is the tea for the menu
+    /// </summary>
     public class Tyrannotea : Drink
     {
+        /// <summary>
+        /// this is the bool for lemon,  if true it adds lemon
+        /// </summary>
         public bool Lemon { get; set; } = false;
-
+        /// <summary>
+        /// private backing for  the sweet setting
+        /// </summary>
         private bool sweet; 
+        /// <summary>
+        /// this is the getter setter for the sweetness in the tea. If 
+        /// true, sweetener is added to the tea and the calories are doubled.
+        /// if not, the calories are set back to their defaults.
+        /// </summary>
         public bool Sweet
         {
             get
@@ -75,6 +91,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// constructor for the tea. The price, calories, ice, size, and ingredients are set. 
+        /// </summary>
         public Tyrannotea()
         {
             Price = 0.99;
@@ -86,6 +105,10 @@ namespace DinoDiner.Menu.Drinks
             Ice = true; 
         }
 
+        /// <summary>
+        /// this is the method for adding a lemon. If called, the lemon
+        /// bool is set true, and lemon is added to the ingredients.
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true; 

@@ -1,12 +1,24 @@
-﻿using System;
+﻿/* Sodasaurus.cs
+ * Author: Parker Lange
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// this is the soda drink for the menu
+    /// </summary>
     public class Sodasaurus : Drink
     {
+        /// <summary>
+        /// the private backing for the soda flavor
+        /// </summary>
         private SodasaurusFlavor flavor; 
+        /// <summary>
+        /// this is the flavor for the soda, gets and returns the flavor user requests
+        /// </summary>
         public SodasaurusFlavor Flavor {
             get { return flavor; }
             set { flavor = value; }
@@ -51,6 +63,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// constructor for the soda, sets price calories size, ice, and ingredeints.
+        /// </summary>
         public Sodasaurus()
         {
             Price = 1.50;

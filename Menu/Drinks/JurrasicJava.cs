@@ -1,12 +1,24 @@
-﻿using System;
+﻿/* JurassicJava.cs
+ * Author: Parker Lange
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// class for the coffee the user can order
+    /// </summary>
     public class JurrasicJava : Drink
     {
+        /// <summary>
+        /// this is a bool leaving room for cream. if true, there will be room
+        /// </summary>
         public bool roomForCream { get; set; } = false;
+        /// <summary>
+        /// this is the option to have the coffee decafinated. 
+        /// </summary>
         public bool decaf { get; set; } = false; 
 
         /// <summary>
@@ -48,6 +60,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// constructor for the coffee, it sets default price calories, ice,  size, and ingredients
+        /// </summary>
         public  JurrasicJava()
         {
             Price = 0.59;
@@ -58,16 +73,25 @@ namespace DinoDiner.Menu.Drinks
             ingredients.Add("Coffee");
         }
 
+        /// <summary>
+        /// method to add ice to the coffee
+        /// </summary>
         public void AddIce()
         {
             Ice = true; 
         }
 
+        /// <summary>
+        /// method to add room for cream in the users coffee
+        /// </summary>
         public void LeaveRoomForCream()
         {
             roomForCream = true; 
         }
 
+        /// <summary>
+        /// method to decafinate the coffee as per users request
+        /// </summary>
         public void Decafinate()
         {
             decaf = true; 

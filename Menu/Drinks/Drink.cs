@@ -1,17 +1,23 @@
-﻿using System;
+﻿/* Drink.cs
+ * Author: Parker Lange
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// This is the abstract for the drinks on the menu
+    /// </summary>
     public abstract class Drink
     {
         /// <summary>
-        /// 
+        /// This is the list of ingredients that go into the drink
         /// </summary>
         protected List<string> ingredients = new List<string>();
         /// <summary>
-        /// 
+        /// this is the property for ice in the drink. If false, no ice
         /// </summary>
         public bool Ice { get; set; }
         /// <summary>
@@ -35,7 +41,7 @@ namespace DinoDiner.Menu.Drinks
         public virtual Size Size { get; set; }
 
         /// <summary>
-        /// 
+        /// When called, the ice property is set to false 
         /// </summary>
         public void HoldIce()
         {

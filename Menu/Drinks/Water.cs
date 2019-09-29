@@ -1,11 +1,20 @@
-﻿using System;
+﻿/* Water.cs
+ * Author: Parker Lange
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// this is the water option for the menu
+    /// </summary>
     public class Water : Drink
     {
+        /// <summary>
+        /// this is the bool to see if the user adds lemon to their water.
+        /// </summary>
         public bool Lemon { get; set; } = false;
         /// <summary>
         /// This is a Size enumerations used to set the size of order
@@ -30,6 +39,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// constructor for water. Price, calories, size, ice, and ingredients are set in here
+        /// </summary>
         public Water()
         {
             Price = 0.10;
@@ -39,6 +51,9 @@ namespace DinoDiner.Menu.Drinks
             Ice = true; 
         }
 
+        /// <summary>
+        /// if called, the lemon bool is true, and lemon is added to the ingredients.
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;
