@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {   
     /// <summary>
     /// this is our base abract Side class
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         protected List<string> ingredients = new List<string>();
         /// <summary>

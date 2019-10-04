@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// This is the class for the food item Fryceritops, it uses the side class for its menu items

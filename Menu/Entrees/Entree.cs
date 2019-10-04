@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// base abstract class for the entree items
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IMenuItem
     {
         /// <summary>
         /// This is the list of ingredients for a menu item

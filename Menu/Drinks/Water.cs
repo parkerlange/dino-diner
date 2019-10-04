@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// this is the water option for the menu
@@ -58,6 +58,11 @@ namespace DinoDiner.Menu.Drinks
         {
             Lemon = true;
             ingredients.Add("Lemon");
+        }
+
+        public override string ToString()
+        {
+            return size + " Water";
         }
     }
 }

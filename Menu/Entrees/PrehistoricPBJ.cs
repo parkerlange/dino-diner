@@ -4,7 +4,7 @@
  */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// this is the class for the food item PBJ

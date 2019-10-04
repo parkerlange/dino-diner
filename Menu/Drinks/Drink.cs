@@ -5,12 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// This is the abstract for the drinks on the menu
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
         /// <summary>
         /// This is the list of ingredients that go into the drink
@@ -33,7 +33,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public virtual List<string> Ingredients { get { return ingredients; } }
+        public virtual List<string> Ingredients { get { return new List<string>(ingredients.ToArray()); } }
 
         /// <summary>
         /// Gets or sets the size

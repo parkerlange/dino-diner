@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// this is the soda drink for the menu
@@ -75,6 +75,11 @@ namespace DinoDiner.Menu.Drinks
             ingredients.Add("Natural Flavors");
             ingredients.Add("Cane Sugar");
             Ice = true; 
+        }
+
+        public override string ToString()
+        {
+            return size + " " + Flavor + " Sodasaurus";
         }
     }
 }

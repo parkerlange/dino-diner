@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// this is the tea for the menu
@@ -113,6 +113,17 @@ namespace DinoDiner.Menu.Drinks
         {
             Lemon = true; 
             ingredients.Add("Lemon");
+        }
+
+        public override string ToString()
+        {
+            string item = "";
+            if (sweet)
+                item = size + " Sweet Tyrannotea";
+            else
+                item = size + " Tyrannotea";
+
+            return item;
         }
     }
 }

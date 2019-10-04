@@ -5,12 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// class for the coffee the user can order
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         /// <summary>
         /// this is a bool leaving room for cream. if true, there will be room
@@ -19,7 +19,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// this is the option to have the coffee decafinated. 
         /// </summary>
-        public bool decaf { get; set; } = false; 
+        public bool Decaf { get; set; } = false; 
 
         /// <summary>
         /// This is a Size enumerations used to set the size of order
@@ -63,7 +63,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// constructor for the coffee, it sets default price calories, ice,  size, and ingredients
         /// </summary>
-        public  JurrasicJava()
+        public  JurassicJava()
         {
             Price = 0.59;
             Calories = 2;
@@ -94,7 +94,18 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public void Decafinate()
         {
-            decaf = true; 
+            Decaf = true; 
+        }
+
+        public override string ToString()
+        {
+            string item = "";
+            if (Decaf)
+                item = size + " Decaf Jurassic Java";
+            else
+                item =  size + " Jurassic Java";
+
+            return item;
         }
     }
 }
