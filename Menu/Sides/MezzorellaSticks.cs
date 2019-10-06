@@ -65,6 +65,10 @@ namespace DinoDiner.Menu
             ingredients.Add("Vegetable Oil");
         }
 
+        /// <summary>
+        /// this is the to string for the class, it returns a string of the menu item as well as its size
+        /// </summary>
+        /// <returns> a string of the menu item </returns>
         public override string ToString()
         {
             return size + " Mezzorella Sticks";

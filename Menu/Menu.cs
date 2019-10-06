@@ -1,88 +1,132 @@
-﻿using System;
+﻿/* Author: Parker Lange
+ * Menu.cs
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
 {
+    /// <summary>
+    /// this is the menu class that represents all of the items on the menu
+    /// </summary>
     public class Menu
     {
-        public List<string> AvailableMenuItems
+        /// <summary>
+        /// this is the list for all items on the menu that are available currently
+        /// </summary>
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
-                List<string> availableMenuItems = new List<string>()
+                //call of every item in the menu to get an instance of them
+                JurassicJava java = new JurassicJava();
+                Sodasaurus soda = new Sodasaurus();
+                Tyrannotea tea = new Tyrannotea();
+                Water water = new Water();
+                Brontowurst brot = new Brontowurst();
+                DinoNuggets nugs = new DinoNuggets();
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                PterodactylWings wings = new PterodactylWings();
+                SteakosaurusBurger burger = new SteakosaurusBurger();
+                TRexKingBurger king = new TRexKingBurger();
+                VelociWrap wrap = new VelociWrap();
+                Fryceritops fries = new Fryceritops();
+                MeteorMacAndCheese mac = new MeteorMacAndCheese();
+                MezzorellaSticks sticks = new MezzorellaSticks();
+                Triceritots tots = new Triceritots();
+                // we put these objects in an array of objects
+                Object[] menuItems = new Object[]
                 {
-                    "Brontowurst", "Dino-Nuggets", "Prehistoric PB&J", "Pterodactyl Wings",
-                    "Steakosaurus Burger", "T-Rex King Burger", "Veloci-Wrap",
-
-                    "Friceritops", "Meteor Mac and Cheese", "Mezzorella Sticks", "Triceritots",
-
-                    "Jurassic Java", "Sodasaurus", "Tyrannotea", "Water"
+                    brot, nugs, pbj, wings, burger, king, wrap,
+                    java, soda, tea, water,
+                    fries, mac, sticks, tots
                 };
+
+                List<IMenuItem> availableMenuItems = new List<IMenuItem>();
+                foreach (IMenuItem item in menuItems)
+                {
+                    availableMenuItems.Add(item);
+                }
                 return availableMenuItems; 
             }
         }
 
-        public List<string> AvailableEntrees
+        /// <summary>
+        /// this is a list for all entrees on the menu currently available
+        /// </summary>
+        public List<IMenuItem> AvailableEntrees
         {
             get
             {
-                List<string> availableEntrees = new List<string>()
-                {
-                    "Brontowurst", "Dino-Nuggets", "Prehistoric PB&J", "Pterodactyl Wings",
-                    "Steakosaurus Burger", "T-Rex King Burger", "Veloci-Wrap"
-                };
-
+                List<IMenuItem> availableEntrees = new List<IMenuItem>();
+                foreach (IMenuItem entree in AvailableMenuItems)
+                    if (entree is Entree)
+                        availableEntrees.Add((Entree)entree);
                 return availableEntrees;
             }
         }
 
-        public List<string> AvailableSides
+        /// <summary>
+        /// this is the list of all sides currently available on the menu
+        /// </summary>
+        public List<IMenuItem> AvailableSides
         {
             get
             {
-                List<string> availableSides = new List<string>()
-                {
-                    "Friceritops", "Meteor Mac and Cheese", "Mezzorella Sticks", "Triceritots"
-                };
-
+                List<IMenuItem> availableSides = new List<IMenuItem>();
+                foreach (IMenuItem side in AvailableMenuItems)
+                    if (side is Side)
+                        availableSides.Add((Side)side);
                 return availableSides; 
             }
         }
 
-        public List<string> AvailableDrinks
+        /// <summary>
+        /// this is a list of all drinks on the list currently available
+        /// </summary>
+        public List<IMenuItem> AvailableDrinks
         {
             get
             {
-                List<string> availableDrinks = new List<string>()
-                {
-                    "Jurassic Java", "Sodasaurus", "Tyrannotea", "Water"
-                };
-
+                List<IMenuItem> availableDrinks = new List<IMenuItem>();
+                foreach (IMenuItem drink in AvailableMenuItems)
+                    if (drink is Drink)
+                    availableDrinks.Add((Drink)drink);
                 return availableDrinks; 
             }
         }
 
-        public List<string> AvailableCombos
+        /// <summary>
+        /// this is the list of all of the combos that are available on the menu
+        /// </summary>
+        public List<IMenuItem> AvailableCombos
         {
             get
             {
-                List<string> availableCombos = new List<string>();
-                foreach (string item in AvailableEntrees)
+                List<IMenuItem> availableCombos = new List<IMenuItem>();
+                foreach (IMenuItem entree in AvailableMenuItems)
                 {
-                    availableCombos.Add(item + " Combo");
+                    if (entree is Entree)
+                    {
+                        CretaceousCombo combo = new CretaceousCombo((Entree)entree);
+                        availableCombos.Add(combo);
+                    }
                 }
-
                 return availableCombos;
             }
         }
 
+        /// <summary>
+        /// this is the to string method for the menu class. It displays all of the menu items
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             string finalString = "";
-            foreach (string item in AvailableMenuItems)
+            foreach (IMenuItem item in AvailableMenuItems)
             {
-                finalString += item + "\n"; 
+                finalString += item.ToString() + "\n"; 
             }
 
             return finalString; 

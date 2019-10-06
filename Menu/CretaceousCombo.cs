@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// this is the combo option for items on the menu.
     /// </summary>
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem
     {
         /// <summary>
         /// creates an instance of the entree the user picks
@@ -93,6 +93,10 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// this is the constructor for the combo class it sets the entree side and drink
+        /// </summary>
+        /// <param name="entree"></param>
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;
@@ -100,6 +104,10 @@ namespace DinoDiner.Menu
             Drink = new Sodasaurus();
         }
 
+        /// <summary>
+        /// this is the to string for the class, it returns a string of the entree
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Entree + " Combo";

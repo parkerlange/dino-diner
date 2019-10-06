@@ -25,6 +25,10 @@ namespace DinoDiner.Menu
             ingredients.Add("Wing Sauce");
         }
 
+        /// <summary>
+        /// this is the to string for the class, it returns a string of the menu item
+        /// </summary>
+        /// <returns> returns a string of the menu item </returns>
         public override string ToString()
         {
             return "Pterodactyl Wings";
