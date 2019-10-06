@@ -87,5 +87,10 @@ namespace DinoDiner.Menu
         {
             ingredients.Remove("Mayo");
         }
+
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
+        }
     }
 }

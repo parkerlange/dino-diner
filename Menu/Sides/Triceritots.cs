@@ -64,5 +64,10 @@ namespace DinoDiner.Menu
             ingredients.Add("Salt");
             ingredients.Add("Vegetable Oil");
         }
+
+        public override string ToString()
+        {
+            return size + " Triceritots";
+        }
     }
 }

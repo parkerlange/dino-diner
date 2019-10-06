@@ -64,5 +64,10 @@ namespace DinoDiner.Menu
             ingredients.Add("Cheese Product");
             ingredients.Add("Vegetable Oil");
         }
+
+        public override string ToString()
+        {
+            return size + " Mezzorella Sticks";
+        }
     }
 }

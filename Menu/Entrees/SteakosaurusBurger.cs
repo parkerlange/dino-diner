@@ -59,5 +59,10 @@ namespace DinoDiner.Menu
         {
             ingredients.Remove("Pickle");
         }
+
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
+        }
     }
 }

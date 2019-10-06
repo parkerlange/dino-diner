@@ -27,7 +27,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public virtual List<string> Ingredients { get { return ingredients; } }
+        public virtual List<string> Ingredients { get { return new List<string>(ingredients.ToArray()); } }
 
         /// <summary>
         /// Gets or sets the size
