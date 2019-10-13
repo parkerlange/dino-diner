@@ -9,6 +9,80 @@
       Title="DrinkSelection">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="36*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Bottom" TextAlignment="Center" Grid.Row="0" Grid.Column="1">Drink</TextBlock>
+        <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Bottom" TextAlignment="Center" Grid.Row="0" Grid.Column="2">Size</TextBlock>
+        <TextBlock FontSize="18" FontWeight="Bold" VerticalAlignment="Bottom" TextAlignment="Center" Grid.Row="0" Grid.Column="3">Special</TextBlock>
+        <Button Click="SodaClick" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Bottom">
+            <TextBlock FontSize="14" FontWeight="Bold">Sodasaurus</TextBlock>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-14.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="TeaClick" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Bottom">
+            <TextBlock FontSize="14" FontWeight="Bold">Tyrannotea</TextBlock>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-12.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Click ="JavaClick" Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Bottom">
+            <TextBlock FontSize="14" FontWeight="Bold">Jurrasic Java</TextBlock>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-13.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Click="WaterClick" Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Bottom">
+            <TextBlock FontSize="14" FontWeight="Bold">Water</TextBlock>
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="2">
+            <TextBlock FontSize="14" FontWeight="Bold">Small</TextBlock>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="2">
+            <TextBlock FontSize="14" FontWeight="Bold">Medium</TextBlock>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="2">
+            <TextBlock FontSize="14" FontWeight="Bold">Large</TextBlock>
+        </Button>
+
+        <Button Click ="FlavorClick" Name ="FlavorButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
+            <TextBlock FontSize="14" FontWeight="Bold">Flavor</TextBlock>
+        </Button>
+        <Button Name="LemonButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden">
+            <TextBlock FontSize="14" FontWeight="Bold">Add Lemon</TextBlock>
+        </Button>
+        <Button Name = "HoldIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden">
+            <TextBlock FontSize="14" FontWeight="Bold">Hold Ice</TextBlock>
+        </Button>
+
+        <Button Name ="DecafButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
+            <TextBlock FontSize="14" FontWeight="Bold">Decaf</TextBlock>
+        </Button>
+        <Button Name="RoomButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden">
+            <TextBlock FontSize="14" FontWeight="Bold">Room for Cream</TextBlock>
+        </Button>
+        <Button Name = "AddIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden">
+            <TextBlock FontSize="14" FontWeight="Bold">Add Ice</TextBlock>
+        </Button>
+
+        <Button Name ="SweetButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
+            <TextBlock FontSize="14" FontWeight="Bold">Sweet</TextBlock>
+        </Button>
+       
     </Grid>
 </Page>

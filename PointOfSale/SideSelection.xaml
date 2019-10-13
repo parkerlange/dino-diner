@@ -9,6 +9,60 @@
       Title="SideSelection">
 
     <Grid>
-        
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="44,10,0,252" Width="202" >
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" FontWeight="Bold">Side</TextBlock>
+            <Button Height="85" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold" Height="75" Width="85" TextAlignment="Center">Fryceritops</TextBlock>
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="44,118,0,169" Width="202" >
+            <Button Height="85" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold" TextAlignment="Center" Height="83" Width="148">Meteor Mac &amp; Cheese</TextBlock>
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="44,202,0,85" Width="202" >
+            <Button Height="85" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold" Height="82" Width="113">Mezzorella Sticks</TextBlock>
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="44,286,0,1" Width="202" >
+            <Button Height="85" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold" Height="84" Width="68">Triceritots</TextBlock>
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>
+                </Button.Background>
+            </Button>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="285,10,0,269">
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" FontWeight="Bold">Size</TextBlock>
+            <RadioButton Width="204" Margin="0,50,0,-2.8" Height="100">
+                <TextBlock FontSize="18" FontWeight="Bold">Small</TextBlock>
+            </RadioButton>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="285,137,0,142">
+            <RadioButton Width="204" Height="100" Margin="0,6,0,65.2">
+                <TextBlock FontSize="18" FontWeight="Bold">Medium</TextBlock>
+            </RadioButton>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="285,140,0,88" Width="204">
+            <RadioButton Width="204" Margin="0,62,0,60" Height="100">
+                <TextBlock FontSize="18" FontWeight="Bold">Large</TextBlock>
+            </RadioButton>
+        </DockPanel>
     </Grid>
 </Page>

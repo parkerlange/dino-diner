@@ -9,6 +9,31 @@
       Title="CustomizeCombo">
 
     <Grid>
-        
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="78,38,0,229" >
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" FontWeight="Bold">Side</TextBlock>
+            <Button Click ="SideClick" Height="100" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold">Friceritops</TextBlock>
+            </Button>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="341,38,0,229" >
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" FontWeight="Bold">Drink</TextBlock>
+            <Button Click="FlavorClick" Height="100" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold">Sodasarus</TextBlock>
+            </Button>
+        </DockPanel>
+
+        <DockPanel LastChildFill="True" HorizontalAlignment="Left" Margin="32,202,0,65" Width="525" >
+            <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" FontWeight="Bold">Size</TextBlock>
+            <Button Height="100" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold">Small</TextBlock>
+            </Button>
+            <Button Height="100" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold">Medium</TextBlock>
+            </Button>
+            <Button Height="100" Width="175">
+                <TextBlock FontSize="14" FontWeight="Bold">Large</TextBlock>
+            </Button>
+        </DockPanel>
     </Grid>
 </Page>
