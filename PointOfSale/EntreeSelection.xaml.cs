@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Author: Parker Lange
+ * EntreeSelection.xaml
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        /// <summary>
+        /// this is the initialization for the entree selection page
+        /// </summary>
         public EntreeSelection()
         {
             InitializeComponent();

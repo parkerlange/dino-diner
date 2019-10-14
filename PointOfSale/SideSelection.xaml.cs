@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Author: Parker Lange
+ * SideSelection.xaml
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        /// <summary>
+        /// initialization of the side selection page
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();

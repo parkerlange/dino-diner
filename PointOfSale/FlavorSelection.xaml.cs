@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Author: Parker Lange
+ * FlavorSelection.xaml
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
+        /// <summary>
+        /// this is the initialization for the flavors of soda menu
+        /// </summary>
         public FlavorSelection()
         {
             InitializeComponent();
