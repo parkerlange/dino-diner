@@ -3,6 +3,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,8 +11,22 @@ namespace DinoDiner.Menu
     /// <summary>
     /// This is the abstract for the drinks on the menu
     /// </summary>
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event handler for PropertyChanged for fields hold jelly/peanut butter
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// method call for the property changed call
+        /// </summary>
+        /// <param name="propertyName">this is the property being changed</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// This is the list of ingredients that go into the drink
         /// </summary>

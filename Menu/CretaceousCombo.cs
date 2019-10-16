@@ -5,18 +5,44 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// this is the combo option for items on the menu.
     /// </summary>
-    public class CretaceousCombo : IMenuItem
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event handler for PropertyChanged for fields hold jelly/peanut butter
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// method call for the property changed call
+        /// </summary>
+        /// <param name="propertyName">this is the property being changed</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private Entree entree; 
         /// <summary>
         /// creates an instance of the entree the user picks
         /// </summary>
-        public Entree Entree { get; set; }
+        public Entree Entree {
+            get { return entree;  }
+            protected set
+            {
+                entree = value;
+                entree.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
+            }
+        }
         /// <summary>
         /// private backing for the side user selects
         /// </summary>
@@ -32,10 +58,23 @@ namespace DinoDiner.Menu
                 side.Size = size;
             }
         }
+
+        private Drink drink = new Sodasaurus();
         /// <summary>
         /// creates an instance of the drink the user selects 
         /// </summary>
-        public Drink Drink { get; set; }
+        public Drink Drink { get { return drink; }
+            set
+            {
+                drink = value;
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+
+            }
+
+        }
         /// <summary>
         /// This gets the total price. Combos have a 25 cent discount.
         /// </summary>
@@ -72,7 +111,11 @@ namespace DinoDiner.Menu
             {
                 size = value;
                 Drink.Size = value;
-                Side.Size = value; 
+                Side.Size = value;
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 
@@ -90,6 +133,28 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Side.Ingredients);
                 ingredients.AddRange(Drink.Ingredients);
                 return ingredients; 
+            }
+        }
+
+        public string Description
+        {
+            get 
+            {
+                return this.ToString();
+            }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                special.AddRange(Entree.Special);
+                special.Add(Side.Description);
+                special.AddRange(Side.Special);
+                special.Add(Drink.Special);
+                special.AddRange(Drink.Special);
+                return special.ToArray();
             }
         }
 
