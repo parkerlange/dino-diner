@@ -47,6 +47,8 @@ namespace DinoDiner.Menu
         {
             this.bun = false;
             ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -56,6 +58,8 @@ namespace DinoDiner.Menu
         {
             this.peppers = false;
             ingredients.Remove("Peppers");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -65,6 +69,8 @@ namespace DinoDiner.Menu
         {
             this.onion = false;
             ingredients.Remove("Onion");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

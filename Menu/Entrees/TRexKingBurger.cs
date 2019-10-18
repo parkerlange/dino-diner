@@ -70,6 +70,8 @@ namespace DinoDiner.Menu
         {
             this.bun = false;
             ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// if called, lettuce is not on burger
@@ -78,6 +80,8 @@ namespace DinoDiner.Menu
         {
             this.lettuce = false;
             ingredients.Remove("Lettuce");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// if called, tomato is not on burger
@@ -86,6 +90,8 @@ namespace DinoDiner.Menu
         {
             this.tomato = false;
             ingredients.Remove("Tomato");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// if called, onion is not on burger
@@ -94,6 +100,8 @@ namespace DinoDiner.Menu
         {
             this.onion = false;
             ingredients.Remove("Onion");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// if called, pickle is not on burger
@@ -102,6 +110,8 @@ namespace DinoDiner.Menu
         {
             this.pickle = false;
             ingredients.Remove("Pickle");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// if called, ketchup is not on burger
@@ -110,6 +120,8 @@ namespace DinoDiner.Menu
         {
             this.ketchup = false;
             ingredients.Remove("Ketchup");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// if called, mustard is not on burger
@@ -118,6 +130,8 @@ namespace DinoDiner.Menu
         {
             this.mustard = false;
             ingredients.Remove("Mustard");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// if called, mayo is held from burger
@@ -126,6 +140,8 @@ namespace DinoDiner.Menu
         {
             this.mayo = false;
             ingredients.Remove("Mayo");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

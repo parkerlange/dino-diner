@@ -52,6 +52,8 @@ namespace DinoDiner.Menu
                         Calories = 8;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
 
             get
@@ -78,7 +80,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddIce()
         {
-            Ice = true; 
+            Ice = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -86,7 +89,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public void LeaveRoomForCream()
         {
-            roomForCream = true; 
+            roomForCream = true;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -94,7 +98,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public void Decafinate()
         {
-            Decaf = true; 
+            Decaf = true;
+            NotifyOfPropertyChanged("Description");
         }
 
         /// <summary>

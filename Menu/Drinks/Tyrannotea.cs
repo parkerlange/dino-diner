@@ -49,6 +49,10 @@ namespace DinoDiner.Menu
                     if (size == Size.Large)
                         Calories = 32; 
                 }
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Ingredients");
+
             }
         }
         
@@ -83,6 +87,8 @@ namespace DinoDiner.Menu
                         Calories = 32;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
 
             get
@@ -113,6 +119,9 @@ namespace DinoDiner.Menu
         {
             Lemon = true; 
             ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
+
         }
 
         /// <summary>

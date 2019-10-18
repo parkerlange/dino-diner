@@ -47,6 +47,8 @@ namespace DinoDiner.Menu
         {
             dressing = false; 
             ingredients.Remove("Ceasar Dressing");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -56,6 +58,8 @@ namespace DinoDiner.Menu
         {
             lettuce = false; 
             ingredients.Remove("Romaine Lettuce");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -65,6 +69,8 @@ namespace DinoDiner.Menu
         {
             cheese = false; 
             ingredients.Remove("Parmesan Cheese");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

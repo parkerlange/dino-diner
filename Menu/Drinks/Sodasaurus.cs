@@ -21,7 +21,11 @@ namespace DinoDiner.Menu
         /// </summary>
         public SodasaurusFlavor Flavor {
             get { return flavor; }
-            set { flavor = value; }
+            set
+            {
+                flavor = value;
+                NotifyOfPropertyChanged("Description");
+            }
         }
 
         /// <summary>
@@ -55,6 +59,8 @@ namespace DinoDiner.Menu
                         Calories = 208;
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
 
             get

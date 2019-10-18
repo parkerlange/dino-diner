@@ -110,5 +110,15 @@ namespace MenuTest.Entrees
                 Assert.Equal("1 Extra Nuggets", item);
             });
         }
+
+        [Fact]
+        public void AddingNuggetShouldNotifySpecialChange()
+        {
+            DinoNuggets dn = new DinoNuggets();
+            Assert.PropertyChanged(dn, "Special", () =>
+            {
+                dn.AddNugget();
+            });
+        }
     }
 }
