@@ -34,7 +34,8 @@ namespace DinoDiner.Menu
         /// <summary>
         /// this is the property for ice in the drink. If false, no ice
         /// </summary>
-        public bool Ice { get; set; }
+        public bool Ice { get; protected set; }
+        
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -60,7 +61,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldIce()
         {
-            this.Ice = false; 
+            this.Ice = false;
+            NotifyOfPropertyChanged("Special");
+
         }
         /// <summary>
         /// string holding the description of the meun item

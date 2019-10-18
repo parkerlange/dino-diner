@@ -180,6 +180,62 @@ namespace MenuTest.Drinks
                     Assert.Equal("Hold Ice", item);
                 });
             }
+
+            [Theory]
+            [InlineData(Size.Small)]
+            [InlineData(Size.Medium)]
+            [InlineData(Size.Large)]
+            public void ChangingSizeShouldNotifyDescriptionChange(Size size)
+            {
+                Water water = new Water();
+                Assert.PropertyChanged(water, "Description", () =>
+                {
+                    water.Size = size; 
+                });
+            }
+
+            [Theory]
+            [InlineData(Size.Small)]
+            [InlineData(Size.Medium)]
+            [InlineData(Size.Large)]
+            public void ChangingSizeShouldNotifySizeChange(Size size)
+            {
+                Water water = new Water();
+                Assert.PropertyChanged(water, "Size", () =>
+                {
+                    water.Size = size;
+                });
+            }
+
+            [Fact]
+            public void AddingLemonShouldNotifySpecialChange()
+            {
+                Water water = new Water();
+                Assert.PropertyChanged(water, "Special", () =>
+                {
+                    water.AddLemon();
+                });
+            }
+
+            [Fact]
+            public void AddingLemonShouldNotifyIngredientsChange()
+            {
+                Water water = new Water();
+                Assert.PropertyChanged(water, "Ingredients", () =>
+                {
+                    water.AddLemon();
+                });
+            }
+
+            [Fact]
+            public void RemovingIceShouldNotifySpecialChange()
+            {
+                Water water = new Water();
+                Assert.PropertyChanged(water, "Special", () =>
+                {
+                    water.HoldIce();
+                });
+            }
         }
     }
 }

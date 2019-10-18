@@ -31,6 +31,8 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Size");
             }
 
             get
@@ -58,6 +60,8 @@ namespace DinoDiner.Menu
         {
             Lemon = true;
             ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
         }
 
         /// <summary>

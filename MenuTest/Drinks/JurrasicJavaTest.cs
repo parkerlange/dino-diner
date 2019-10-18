@@ -189,6 +189,82 @@ namespace MenuTest.Drinks
             });
         }
 
+        [Fact]
+        public void AddingIceShouldNotifySpecialChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.AddIce();
+            });
+        }
 
+        [Fact]
+        public void AddingRoomShouldNotifySpecialChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.LeaveRoomForCream();
+            });
+        }
+
+        [Fact]
+        public void DecafShouldNotifyDescriptionChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Description", () =>
+            {
+                java.Decafinate();
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSizeShouldNotifyPriceChange(Size size, bool decaf)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Price", () =>
+            {
+                java.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSizeShouldNotifySizeChange(Size size, bool decaf)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Size", () =>
+            {
+                java.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSizeShouldNotifyCalorieChange(Size size, bool decaf)
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Calories", () =>
+            {
+                java.Size = size;
+            });
+        }
     }
 }

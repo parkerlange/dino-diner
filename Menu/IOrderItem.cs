@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// This is the interface for IOrderItem
     /// it will be supported by the gui
     /// </summary>
-    interface IOrderItem
+    public interface IOrderItem
     {
         /// <summary>
         /// double value holding the price of the item

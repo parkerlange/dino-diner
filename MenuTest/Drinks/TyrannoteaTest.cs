@@ -258,5 +258,115 @@ namespace MenuTest.Drinks
                 Assert.Equal("Hold Ice", item);
             });
         }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSizeShouldNotifyCaloriesChange(Size size, bool sweet)
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Calories", () =>
+            {
+                tea.Size = size; 
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSizeShouldNotifySizeChange(Size size, bool sweet)
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Size", () =>
+            {
+                tea.Size = size;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSweetShouldNotifyDescriptionChange(Size size, bool sweet)
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Description", () =>
+            {
+                tea.Sweet = sweet;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSweetShouldNotifyIngredientsChange(Size size, bool sweet)
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Ingredients", () =>
+            {
+                tea.Sweet = sweet;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small, false)]
+        [InlineData(Size.Medium, false)]
+        [InlineData(Size.Large, false)]
+        [InlineData(Size.Small, true)]
+        [InlineData(Size.Medium, true)]
+        [InlineData(Size.Large, true)]
+        public void ChangingSizeShouldNotifyPriceChange(Size size, bool sweet)
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Price", () =>
+            {
+                tea.Size = size;
+            });
+        }
+
+        [Fact]
+        public void AddingLemonShouldNotifySpecialChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Special", () =>
+            {
+                tea.AddLemon();
+            });
+        }
+
+        [Fact]
+        public void AddingLemonShouldNotifyIngredientsChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Ingredients", () =>
+            {
+                tea.AddLemon();
+            });
+        }
+        [Fact]
+        public void RemovingIceShouldNotifySpecialChange()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.PropertyChanged(tea, "Special", () =>
+            {
+                tea.HoldIce();
+            });
+        }
+
     }
 }
