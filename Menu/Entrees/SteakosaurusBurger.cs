@@ -14,6 +14,22 @@ namespace DinoDiner.Menu
     public class SteakosaurusBurger : Entree
     {
         /// <summary>
+        /// bool indicating a bun 
+        /// </summary>
+        private bool bun = true;
+        /// <summary>
+        /// bool indicating ketchup
+        /// </summary>
+        private bool ketchup = true;
+        /// <summary>
+        /// bool indicating mustard
+        /// </summary>
+        private bool mustard = true;
+        /// <summary>
+        /// bool indicating pickles
+        /// </summary>
+        private bool pickle = true; 
+        /// <summary>
         /// constructor for the burger, sets price and calories
         /// it also adds all of the ingredients to the menu item
         /// </summary>
@@ -33,6 +49,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
+            bun = false; 
             ingredients.Remove("Whole Wheat Bun");
         }
 
@@ -41,6 +58,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldKetchup()
         {
+            this.ketchup = false; 
             ingredients.Remove("Ketchup");
         }
 
@@ -49,6 +67,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMustard()
         {
+            this.mustard = false; 
             ingredients.Remove("Mustard");
         }
 
@@ -57,6 +76,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPickle()
         {
+            this.pickle = false; 
             ingredients.Remove("Pickle");
         }
 
@@ -67,6 +87,29 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Steakosaurus Burger";
+        }
+        /// <summary>
+        /// gets a description of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// special is a string array holding the held items user does not want
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!pickle) special.Add("Hold Pickle");
+                return special.ToArray();
+            }
         }
     }
 }

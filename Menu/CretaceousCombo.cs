@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// this is the combo option for items on the menu.
     /// </summary>
-    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// An event handler for PropertyChanged for fields hold jelly/peanut butter
@@ -152,7 +152,7 @@ namespace DinoDiner.Menu
                 special.AddRange(Entree.Special);
                 special.Add(Side.Description);
                 special.AddRange(Side.Special);
-                special.Add(Drink.Special);
+                special.Add(Drink.Description);
                 special.AddRange(Drink.Special);
                 return special.ToArray();
             }

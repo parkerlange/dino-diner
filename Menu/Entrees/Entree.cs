@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// base abstract class for the entree items
     /// </summary>
-    public abstract class Entree : IMenuItem, INotifyPropertyChanged
+    public abstract class Entree : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// An event handler for PropertyChanged for fields hold jelly/peanut butter
@@ -43,6 +43,13 @@ namespace DinoDiner.Menu
         /// Gets the ingredients list
         /// </summary>
         public virtual List<string> Ingredients { get { return new List<string>(ingredients.ToArray()); } }
-
+        /// <summary>
+        /// string holding the description of the meun item
+        /// </summary>
+        public abstract string Description { get;  }
+        /// <summary>
+        /// string array holding special requests for the menu item
+        /// </summary>
+        public abstract string[] Special { get;  }
     }
 }

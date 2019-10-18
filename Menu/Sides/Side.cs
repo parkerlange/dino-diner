@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// this is our base abract Side class
     /// </summary>
-    public abstract class Side : IMenuItem, INotifyPropertyChanged
+    public abstract class Side : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
 
         /// <summary>
@@ -49,6 +49,13 @@ namespace DinoDiner.Menu
         /// Gets or sets the size
         /// </summary>
         public virtual Size Size { get; set; }
-
+        /// <summary>
+        /// string holding the description of the meun item
+        /// </summary>
+        public abstract string Description { get; }
+        /// <summary>
+        /// string array holding special requests for the menu item
+        /// </summary>
+        public abstract string[] Special { get; }
     }
 }

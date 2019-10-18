@@ -34,6 +34,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddNugget()
         {
+            this.NuggetCount++; 
             Price += .25;
             Calories += 59;
             ingredients.Add("Chicken Nugget");
@@ -46,6 +47,30 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Dino-Nuggets";
+        }
+        /// <summary>
+        /// gets a description of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// special is a string array holding the held items user does not want
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                for (int i = 0; i >= NuggetCount; i++)
+                {
+                    if (i > 6)
+                        special.Add(i-6 + " Extra Nuggets");
+                }
+                return special.ToArray();
+            }
         }
     }
 }

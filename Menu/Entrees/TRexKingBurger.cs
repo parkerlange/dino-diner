@@ -14,6 +14,38 @@ namespace DinoDiner.Menu
     public class TRexKingBurger : Entree
     {
         /// <summary>
+        /// determines if the bun is on the burger
+        /// </summary>
+        private bool bun = true;
+        /// <summary>
+        /// determines if the lettuce is on the burger
+        /// </summary>
+        private bool lettuce = true;
+        /// <summary>
+        /// determines if the tomato is on burger
+        /// </summary>
+        private bool tomato = true;
+        /// <summary>
+        /// determines if onion is on burger
+        /// </summary>
+        private bool onion = true;
+        /// <summary>
+        /// determines if pickle is on burger
+        /// </summary>
+        private bool pickle = true;
+        /// <summary>
+        /// determines if ketchup is on burger
+        /// </summary>
+        private bool ketchup = true;
+        /// <summary>
+        /// determines if mustard is on burger
+        /// </summary>
+        private bool mustard = true;
+        /// <summary>
+        /// determines if mayo is on the burger
+        /// </summary>
+        private bool mayo = true; 
+        /// <summary>
         /// constructor for the burger, sets price and calories
         /// it also adds all of the ingredients to the menu item
         /// </summary>
@@ -36,6 +68,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
+            this.bun = false;
             ingredients.Remove("Whole Wheat Bun");
         }
         /// <summary>
@@ -43,6 +76,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldLettuce()
         {
+            this.lettuce = false;
             ingredients.Remove("Lettuce");
         }
         /// <summary>
@@ -50,6 +84,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldTomato()
         {
+            this.tomato = false;
             ingredients.Remove("Tomato");
         }
         /// <summary>
@@ -57,6 +92,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldOnion()
         {
+            this.onion = false;
             ingredients.Remove("Onion");
         }
         /// <summary>
@@ -64,6 +100,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPickle()
         {
+            this.pickle = false;
             ingredients.Remove("Pickle");
         }
         /// <summary>
@@ -71,6 +108,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldKetchup()
         {
+            this.ketchup = false;
             ingredients.Remove("Ketchup");
         }
         /// <summary>
@@ -78,6 +116,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMustard()
         {
+            this.mustard = false;
             ingredients.Remove("Mustard");
         }
         /// <summary>
@@ -85,6 +124,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldMayo()
         {
+            this.mayo = false;
             ingredients.Remove("Mayo");
         }
 
@@ -95,6 +135,34 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "T-Rex King Burger";
+        }
+
+        /// <summary>
+        /// gets a description of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// special is a string array holding the held items user does not want
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!tomato) special.Add("Hold Tomato");
+                if (!onion) special.Add("Hold Onion");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!mayo) special.Add("Hold Mayo");
+                return special.ToArray();
+            }
         }
     }
 }

@@ -41,7 +41,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPeanutButter()
         {
-            peanutButter = false;
+            this.peanutButter = false;
             ingredients.Remove("Peanut Butter");
             NotifyOfPropertyChanged("Ingredients");
             NotifyOfPropertyChanged("Special");
@@ -52,7 +52,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldJelly()
         {
-            jelly = false; 
+            this.jelly = false; 
             ingredients.Remove("Jelly");
             NotifyOfPropertyChanged("Ingredients");
             NotifyOfPropertyChanged("Special");
@@ -70,12 +70,15 @@ namespace DinoDiner.Menu
         /// <summary>
         /// gets a description of the order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
 
-        public string[] Special
+        /// <summary>
+        /// special is a string array holding the held items user does not want
+        /// </summary>
+        public override string[] Special
         {
             get
             {

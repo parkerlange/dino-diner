@@ -85,5 +85,25 @@ namespace DinoDiner.Menu
         {
             return size + " " + Flavor + " Sodasaurus";
         }
+        /// <summary>
+        /// gets a description of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// special is a string array holding the held items user does not want
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
     }
 }

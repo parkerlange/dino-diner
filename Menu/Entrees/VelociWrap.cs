@@ -13,6 +13,19 @@ namespace DinoDiner.Menu
     public class VelociWrap : Entree
     {
         /// <summary>
+        /// oprivate bool indicating lettuce
+        /// </summary>
+        private bool lettuce = true;
+        /// <summary>
+        /// private bool indicating if dressing is on the wrap
+        /// </summary>
+        private bool dressing = true;
+        /// <summary>
+        /// private bool indicating if cheese is on the wrap
+        /// </summary>
+        private bool cheese = true; 
+
+        /// <summary>
         /// this is the constructor for the wrap, it sets price and calories
         /// it also adds all of the ingredients to the menu item
         /// </summary>
@@ -32,6 +45,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldDressing()
         {
+            dressing = false; 
             ingredients.Remove("Ceasar Dressing");
         }
 
@@ -40,6 +54,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldLettuce()
         {
+            lettuce = false; 
             ingredients.Remove("Romaine Lettuce");
         }
 
@@ -48,6 +63,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldCheese()
         {
+            cheese = false; 
             ingredients.Remove("Parmesan Cheese");
         }
 
@@ -58,6 +74,26 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Veloci-Wrap";
+        }
+
+        /// <summary>
+        /// gets a description of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public override  string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!dressing) special.Add("Hold Dressing");
+                if (!cheese) special.Add("Hold Cheese");
+                return special.ToArray();
+            }
         }
     }
 }

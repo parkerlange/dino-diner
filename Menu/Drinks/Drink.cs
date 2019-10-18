@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// This is the abstract for the drinks on the menu
     /// </summary>
-    public abstract class Drink : IMenuItem, INotifyPropertyChanged
+    public abstract class Drink : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// An event handler for PropertyChanged for fields hold jelly/peanut butter
@@ -62,7 +62,14 @@ namespace DinoDiner.Menu
         {
             this.Ice = false; 
         }
-
+        /// <summary>
+        /// string holding the description of the meun item
+        /// </summary>
+        public abstract string Description { get; }
+        /// <summary>
+        /// string array holding special requests for the menu item
+        /// </summary>
+        public abstract string[] Special { get; }
     }
 }
 

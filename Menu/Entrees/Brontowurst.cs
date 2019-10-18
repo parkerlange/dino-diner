@@ -6,13 +6,25 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu
-{
+{ 
     /// <summary>
     /// this is the class to create the brontowurst to the users selections
     /// inherited from entree base class
     /// </summary>
     public class Brontowurst : Entree
     {
+        /// <summary>
+        /// Bool to set adding a bun true or false
+        /// </summary>
+        private bool bun = true;
+        /// <summary>
+        /// Bool to set adding peppers true or false
+        /// </summary>
+        private bool peppers = true;
+        /// <summary>
+        /// Bool to set addding onion true or false
+        /// </summary>
+        private bool onion = true;
 
         /// <summary>
         /// This is the public constructor Brontowurst, this sets price and calories
@@ -33,6 +45,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldBun()
         {
+            this.bun = false;
             ingredients.Remove("Whole Wheat Bun");
         }
 
@@ -41,6 +54,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldPeppers()
         {
+            this.peppers = false;
             ingredients.Remove("Peppers");
         }
 
@@ -49,6 +63,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldOnion()
         {
+            this.onion = false;
             ingredients.Remove("Onion");
         }
 
@@ -59,6 +74,29 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Brontowurst";
+        }
+
+        /// <summary>
+        /// gets a description of the order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// special is a string array holding the held items user does not want
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Bun");
+                if (!peppers) special.Add("Hold Peppers");
+                if (!onion) special.Add("Hold Onion");
+                return special.ToArray();
+            }
         }
     }
 }
