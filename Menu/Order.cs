@@ -24,7 +24,7 @@ namespace DinoDiner.Menu
                 double totalPrice = 0; 
                 foreach (IOrderItem item in Items)
                 {
-                    totalPrice =+ item.Price; 
+                    totalPrice += item.Price; 
                 }
 
                 if (totalPrice < 0)
@@ -37,7 +37,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// this is the sales tax rate
         /// </summary>
-        public double SalesTaxRate { get; protected set; }
+        public double SalesTaxRate { get; protected set; } = 0.05; 
 
         /// <summary>
         /// this is the cost of sales tax for the order
@@ -46,7 +46,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return SalesTaxRate * SubtotalCost;
+                return Math.Round(SalesTaxRate * SubtotalCost, 2, MidpointRounding.AwayFromZero);
             }
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                return SubtotalCost + SalesTaxCost;
+                return Math.Round(SubtotalCost + SalesTaxCost, 2, MidpointRounding.AwayFromZero);
             }
         }
     }

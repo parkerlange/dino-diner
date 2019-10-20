@@ -12,11 +12,46 @@ namespace MenuTest
         public void SubtotalPriceShouldBeCorrectSum()
         {
             CretaceousCombo c = new CretaceousCombo(new MockEntree(8.00));
-            c.Drink = new MockDrink(1.50);
+            c.Drink = new MockDrink(1.25);
             c.Side = new MockSide(3.00);
             Order o = new Order();
             o.Items.Add(c);
-            Assert.Equal<double>(12.50, o.SubtotalCost);
+            Assert.Equal<double>(12.00, o.SubtotalCost);
+        }
+
+        [Fact]
+        public void SalesTaxCalculationShouldBeCorrect()
+        {
+            CretaceousCombo c = new CretaceousCombo(new MockEntree(8.00));
+            c.Drink = new MockDrink(1.25);
+            c.Side = new MockSide(3.00);
+            Order o = new Order();
+            o.Items.Add(c);
+            //o.SalesTaxRate = 0.05; 
+            Assert.Equal<double>(0.60, o.SalesTaxCost);
+        }
+
+        [Fact]
+        public void TotalPriceCalculationShouldBeCorrect()
+        {
+            CretaceousCombo c = new CretaceousCombo(new MockEntree(8.00));
+            c.Drink = new MockDrink(1.25);
+            c.Side = new MockSide(3.00);
+            Order o = new Order();
+            o.Items.Add(c);
+            //o.SalesTaxRate = 0.05;
+            Assert.Equal<double>(12.60, o.TotalCost);
+        }
+
+        [Fact]
+        public void NegativeSumCalculationShouldSetToZero()
+        {
+            CretaceousCombo c = new CretaceousCombo(new MockEntree(-8.00));
+            c.Drink = new MockDrink(1.25);
+            c.Side = new MockSide(3.00);
+            Order o = new Order();
+            o.Items.Add(c);
+            Assert.Equal<double>(0, o.SubtotalCost);
         }
     }
 }
