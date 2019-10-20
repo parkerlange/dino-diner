@@ -135,6 +135,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// this returns the description of the string
+        /// </summary>
         public string Description
         {
             get 
@@ -142,6 +145,10 @@ namespace DinoDiner.Menu
                 return this.ToString();
             }
         }
+
+        /// <summary>
+        /// this returns a list of all of the special requests the user has for their order
+        /// </summary>
 
         public string[] Special
         {

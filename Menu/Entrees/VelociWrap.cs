@@ -90,6 +90,9 @@ namespace DinoDiner.Menu
             get { return this.ToString(); }
         }
 
+        /// <summary>
+        /// this is a list of all of the special requests for the order 
+        /// </summary>
         public override  string[] Special
         {
             get
