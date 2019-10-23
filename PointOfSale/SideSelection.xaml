@@ -23,7 +23,7 @@
             <ColumnDefinition Width="93*"/>
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment ="Center" VerticalAlignment ="Bottom" FontSize="18" FontWeight="Bold" Grid.Column="1">Side</TextBlock>
-        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="1" Margin="0,0.2,0,0.4">
+        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="1" Margin="0,0.2,0,0.4" Click="OnSelectFryceritops">
             <TextBlock FontSize="14" FontWeight="Bold" TextAlignment="Center">Fryceritops</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
@@ -48,13 +48,13 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment ="Center" VerticalAlignment ="Bottom" FontSize="18" FontWeight="Bold" Grid.Column="2">Size</TextBlock>
-        <RadioButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RadioButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Small" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Small</TextBlock>
         </RadioButton>
-        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Medium" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Medium</TextBlock>
         </RadioButton>
-        <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Large" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Large</TextBlock>
         </RadioButton>
     </Grid>
