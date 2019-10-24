@@ -29,19 +29,19 @@
                 <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="1" Margin="0,85.2,0,0" Grid.RowSpan="2">
+        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="1" Margin="0,85.2,0,0" Grid.RowSpan="2" Click="OnSelectMeteorMacAndCheese">
             <TextBlock FontSize="14" FontWeight="Bold" TextAlignment="Center">Meteor Mac &amp; Cheese</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="3" Margin="0,0,0,85.2" Grid.RowSpan="2">
+        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="3" Margin="0,0,0,85.2" Grid.RowSpan="2" Click="OnSelectMezzorellaSticks">
             <TextBlock FontSize="14" FontWeight="Bold" TextAlignment="Center">Mezzorella Sticks</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-10.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="4" Margin="0,0.4,0,0.2">
+        <Button Grid.Column="1" VerticalContentAlignment="Bottom" Grid.Row="4" Margin="0,0.4,0,0.2" Click="OnSelectTriceritots">
             <TextBlock FontSize="14" FontWeight="Bold" TextAlignment="Center">Triceritots</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-11.png"></ImageBrush>

@@ -50,37 +50,37 @@
                 <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <RadioButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RadioButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Small" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Small</TextBlock>
         </RadioButton>
-        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Medium" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Medium</TextBlock>
         </RadioButton>
-        <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Large" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Large</TextBlock>
         </RadioButton>
 
         <Button Click ="FlavorClick" Name ="FlavorButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
             <TextBlock FontSize="14" FontWeight="Bold">Flavor</TextBlock>
         </Button>
-        <Button Name="LemonButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden">
+        <Button Name="LemonButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden" Click="OnSelectLemon">
             <TextBlock FontSize="14" FontWeight="Bold">Add Lemon</TextBlock>
         </Button>
-        <Button Name = "HoldIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden">
+        <Button Name = "HoldIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden" Click="OnSelectHoldIce">
             <TextBlock FontSize="14" FontWeight="Bold">Hold Ice</TextBlock>
         </Button>
 
-        <Button Name ="DecafButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
+        <Button Name ="DecafButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden" Click="OnSelectDecaf">
             <TextBlock FontSize="14" FontWeight="Bold">Decaf</TextBlock>
         </Button>
-        <Button Name="RoomButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden">
+        <Button Name="RoomButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden" Click="OnSelectRoom">
             <TextBlock FontSize="14" FontWeight="Bold">Room for Cream</TextBlock>
         </Button>
-        <Button Name = "AddIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden">
+        <Button Name = "AddIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden" Click="OnSelectAddIce">
             <TextBlock FontSize="14" FontWeight="Bold">Add Ice</TextBlock>
         </Button>
 
-        <Button Name ="SweetButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
+        <Button Name ="SweetButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden" Click="OnSelectSweet">
             <TextBlock FontSize="14" FontWeight="Bold">Sweet</TextBlock>
         </Button>
        

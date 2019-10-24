@@ -20,13 +20,13 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button VerticalContentAlignment="Bottom" Grid.Column="1" Grid.Row="0">
+        <Button VerticalContentAlignment="Bottom" Grid.Column="1" Grid.Row="0" Click="OnSelectBrontowurst">
             <TextBlock FontSize="14" FontWeight="Bold">Brontowurst</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="0">
+        <Button VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="0" Click="OnSelectDinoNuggets">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
@@ -34,31 +34,31 @@
                 Dino-Nuggets
             </TextBlock>
         </Button>
-        <Button VerticalContentAlignment="Bottom" Grid.Column="2" Grid.Row="0">
+        <Button VerticalContentAlignment="Bottom" Grid.Column="2" Grid.Row="0" Click="OnSelectSteakosaurusBurger">
             <TextBlock FontSize="14" FontWeight="Bold">Steakosaurus</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button VerticalContentAlignment="Bottom" Grid.Column="1" Grid.Row="1">
+        <Button VerticalContentAlignment="Bottom" Grid.Column="1" Grid.Row="1" Click="OnSelectTRexKingBurger">
             <TextBlock FontSize="14" FontWeight="Bold">T-Rex King Burger</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="1">
+        <Button VerticalContentAlignment="Bottom" Grid.Column="0" Grid.Row="1" Click="OnSelectPrehistoricPBJ">
             <TextBlock FontSize="14" FontWeight="Bold">Prehistoric PB&amp;J</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button VerticalContentAlignment="Bottom" Grid.Column="2" Grid.Row="1">
+        <Button VerticalContentAlignment="Bottom" Grid.Column="2" Grid.Row="1" Click="OnSelectPterodactylWings">
             <TextBlock FontSize="14" FontWeight="Bold">Pterodactyl Wings</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <Button VerticalContentAlignment="Bottom" Grid.Column="1" Grid.Row="2">
+        <Button VerticalContentAlignment="Bottom" Grid.Column="1" Grid.Row="2" Click="OnSelectVelociWrap">
             <TextBlock FontSize="14" FontWeight="Bold">Veloci-Wrap</TextBlock>
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>

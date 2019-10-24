@@ -19,25 +19,25 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0">
-            <TextBlock FontSize="14" FontWeight="Bold">Grape</TextBlock>
+        <Button Grid.Row="0" Grid.Column="0" Tag="Cherry" Click="OnFlavorSelect">
+            <TextBlock FontSize="14" FontWeight="Bold">Cherry</TextBlock>
         </Button>
-        <Button Grid.Row="0" Grid.Column="1">
+        <Button Grid.Row="0" Grid.Column="1" Tag="Chocolate" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Chocolate</TextBlock>
         </Button>
-        <Button Grid.Row="0" Grid.Column="2">
+        <Button Grid.Row="0" Grid.Column="2" Tag="Cola" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Cola</TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="0">
+        <Button Grid.Row="1" Grid.Column="0" Tag="Lime" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Lime</TextBlock>
         </Button>
-        <Button Grid.Row="1" Grid.Column="2">
+        <Button Grid.Row="1" Grid.Column="2" Tag="Orange" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Orange</TextBlock>
         </Button>
-        <Button Grid.Row="2" Grid.Column="0">
+        <Button Grid.Row="2" Grid.Column="0" Tag="Root Beer" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Root Beer</TextBlock>
         </Button>
-        <Button Grid.Row="2" Grid.Column="2">
+        <Button Grid.Row="2" Grid.Column="2" Tag="Vanilla" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Vanilla</TextBlock>
         </Button>
         <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="28" FontWeight="Bold" Grid.Column="1" Grid.Row="1">Flavor</TextBlock>

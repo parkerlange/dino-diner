@@ -1,6 +1,7 @@
 ﻿/* Author: parker Lange
  * DrinkSelection.xaml
  */
+using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DDSize = DinoDiner.Menu.Size;
+
 
 namespace PointOfSale
 {
@@ -23,6 +26,8 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        public Drink drink { get; set; }
+       
         /// <summary>
         /// this is the initialization for thhe drink page
         /// </summary>
@@ -54,10 +59,15 @@ namespace PointOfSale
             RoomButton.Visibility = Visibility.Hidden;
             AddIceButton.Visibility = Visibility.Hidden;
             SweetButton.Visibility = Visibility.Hidden;
-           
 
             FlavorButton.Visibility = Visibility.Visible;
             HoldIceButton.Visibility = Visibility.Visible;
+
+            if (DataContext is Order order)
+            {
+                drink = new Sodasaurus();
+                order.Items.Add(drink);
+            }
         }
         // <summary>
         /// if the coffee button is pressed we only make the options for coffee shown and disable the rest
@@ -78,6 +88,13 @@ namespace PointOfSale
             DecafButton.Visibility = Visibility.Visible;
             RoomButton.Visibility = Visibility.Visible;
             AddIceButton.Visibility = Visibility.Visible;
+
+
+            if (DataContext is Order order)
+            {
+                drink = new JurassicJava();
+                order.Items.Add(drink);
+            }
         }
         // <summary>
         /// if the water button is pressed we only make the options for water shown and disable the rest
@@ -97,6 +114,13 @@ namespace PointOfSale
 
             LemonButton.Visibility = Visibility.Visible;
             HoldIceButton.Visibility = Visibility.Visible;
+
+
+            if (DataContext is Order order)
+            {
+                drink = new Water();
+                order.Items.Add(drink);
+            }
         }
         // <summary>
         /// if the Tea button is pressed we only make the options for tea shown and disable the rest
@@ -117,7 +141,68 @@ namespace PointOfSale
             SweetButton.Visibility = Visibility.Visible;
             LemonButton.Visibility = Visibility.Visible;
             HoldIceButton.Visibility = Visibility.Visible;
+
+
+            if (DataContext is Order order)
+            {
+                drink = new Tyrannotea();
+                order.Items.Add(drink);
+            }
         }
 
+        private void OnChangeSize(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                drink.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+            }
+        }
+
+        private void OnSelectHoldIce(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                
+            }
+        }
+
+        private void OnSelectLemon(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                
+            }
+        }
+
+        private void OnSelectDecaf(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                 
+            }
+        }
+
+        private void OnSelectRoom(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                
+            }
+        }
+
+        private void OnSelectSweet(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                
+            }
+        }
+        private void OnSelectAddIce(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                
+            }
+        }
     }
 }
