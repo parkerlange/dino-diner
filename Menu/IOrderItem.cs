@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,7 +12,7 @@ namespace DinoDiner.Menu
     /// This is the interface for IOrderItem
     /// it will be supported by the gui
     /// </summary>
-    public interface IOrderItem
+    public interface IOrderItem : INotifyPropertyChanged
     {
         /// <summary>
         /// double value holding the price of the item

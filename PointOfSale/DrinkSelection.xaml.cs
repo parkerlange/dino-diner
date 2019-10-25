@@ -46,14 +46,23 @@ namespace PointOfSale
         /// <summary>
         /// instance of the java class
         /// </summary>
-        JurassicJava java = new JurassicJava(); 
-       
+        JurassicJava java = new JurassicJava();
+
         /// <summary>
         /// this is the initialization for thhe drink page
         /// </summary>
         public DrinkSelection()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// this is the initialization for thhe drink page
+        /// </summary>
+        public DrinkSelection(Drink drink)
+        {
+            InitializeComponent();
+            this.drink = drink; 
         }
         /// <summary>
         /// if the flavor button is pressed,  we go to the flavors page
@@ -87,7 +96,7 @@ namespace PointOfSale
             {
                 drink = new Sodasaurus();
                 soda = (Sodasaurus)drink; 
-                order.Items.Add(drink);
+                order.Add(drink);
             }
         }
         // <summary>
@@ -115,7 +124,7 @@ namespace PointOfSale
             {
                 drink = new JurassicJava();
                 java = (JurassicJava)drink;
-                order.Items.Add(drink);
+                order.Add(drink);
             }
         }
         // <summary>
@@ -142,7 +151,7 @@ namespace PointOfSale
             {
                 drink = new Water();
                 water = (Water)drink; 
-                order.Items.Add(drink);
+                order.Add(drink);
             }
         }
         // <summary>
@@ -170,7 +179,7 @@ namespace PointOfSale
             {
                 drink = new Tyrannotea();
                 tea = (Tyrannotea)drink;
-                order.Items.Add(drink);
+                order.Add(drink);
             }
         }
 

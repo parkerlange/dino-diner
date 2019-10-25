@@ -46,8 +46,11 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new Brontowurst();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
+
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
         /// <summary>
         /// event handler for the nuggets add to order
@@ -59,8 +62,11 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new DinoNuggets();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
+
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
 
         /// <summary>
@@ -73,8 +79,10 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new SteakosaurusBurger();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
         /// <summary>
         /// event handler for adding t rex to order
@@ -86,8 +94,11 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new TRexKingBurger();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
+
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
 
         /// <summary>
@@ -100,8 +111,11 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new PrehistoricPBJ();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
+
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
         /// <summary>
         /// event handler for adding wings to order
@@ -113,8 +127,11 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new PterodactylWings();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
+
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
         /// <summary>
         /// event handler for adding wrap to order
@@ -126,9 +143,12 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 entree = new VelociWrap();
-                order.Items.Add(entree);
+                order.Add(entree);
             }
+
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
-        
+
     }
 }
