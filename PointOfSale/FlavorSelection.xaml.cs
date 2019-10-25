@@ -24,13 +24,14 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        Sodasaurus sd = new Sodasaurus(); 
+        Sodasaurus sd = new Sodasaurus();
         /// <summary>
         /// this is the initialization for the flavors of soda menu
         /// </summary>
-        public FlavorSelection()
+        public FlavorSelection(Sodasaurus soda)
         {
             InitializeComponent();
+            sd = soda; 
         }
 
 

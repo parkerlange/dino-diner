@@ -59,6 +59,9 @@
         <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Large" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Large</TextBlock>
         </RadioButton>
+        <Button Grid.Row="4" Grid.Column="2" Click="OnSelectBack">
+            <TextBlock Text="Back" TextAlignment="Center" FontSize="18" FontWeight="Bold"></TextBlock>
+        </Button>
 
         <Button Click ="FlavorClick" Name ="FlavorButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
             <TextBlock FontSize="14" FontWeight="Bold">Flavor</TextBlock>

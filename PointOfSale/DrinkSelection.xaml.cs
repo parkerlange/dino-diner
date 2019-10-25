@@ -27,6 +27,11 @@ namespace PointOfSale
     public partial class DrinkSelection : Page
     {
         public Drink drink { get; set; }
+
+        Water water = new Water();
+        Sodasaurus soda = new Sodasaurus();
+        Tyrannotea tea = new Tyrannotea();
+        JurassicJava java = new JurassicJava(); 
        
         /// <summary>
         /// this is the initialization for thhe drink page
@@ -42,7 +47,7 @@ namespace PointOfSale
         /// <param name="arg">arg is what the action is suppose to be</param>
         private void FlavorClick(Object sender, RoutedEventArgs arg)
         {
-            NavigationService.Navigate(new FlavorSelection());
+            NavigationService.Navigate(new FlavorSelection(soda));
         }
         // <summary>
         /// if the soda button is pressed we only make the options for soda shown and disable the rest
@@ -66,6 +71,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Sodasaurus();
+                soda = (Sodasaurus)drink; 
                 order.Items.Add(drink);
             }
         }
@@ -93,6 +99,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new JurassicJava();
+                java = (JurassicJava)drink;
                 order.Items.Add(drink);
             }
         }
@@ -119,6 +126,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Water();
+                water = (Water)drink; 
                 order.Items.Add(drink);
             }
         }
@@ -146,6 +154,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink = new Tyrannotea();
+                tea = (Tyrannotea)drink;
                 order.Items.Add(drink);
             }
         }
@@ -162,47 +171,66 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                
+                drink.HoldIce();
             }
         }
 
         private void OnSelectLemon(object sender, RoutedEventArgs args)
         {
-            if (sender is FrameworkElement element)
+            if (DataContext is Order order)
             {
-                
+                if (drink is Water)
+                {
+                    water.AddLemon();
+                    drink = water; 
+                }
+
+                if (drink is Tyrannotea)
+                {
+                    tea.AddLemon();
+                    drink = tea; 
+                }
             }
         }
 
         private void OnSelectDecaf(object sender, RoutedEventArgs args)
         {
-            if (sender is FrameworkElement element)
+            if (DataContext is Order order)
             {
-                 
+                java.Decafinate();
+                drink = java; 
             }
         }
 
         private void OnSelectRoom(object sender, RoutedEventArgs args)
         {
-            if (sender is FrameworkElement element)
+            if (DataContext is Order order)
             {
-                
+                java.LeaveRoomForCream();
+                drink = java; 
             }
         }
 
         private void OnSelectSweet(object sender, RoutedEventArgs args)
         {
-            if (sender is FrameworkElement element)
+            if (DataContext is Order order)
             {
-                
+                tea.Sweet = true;
+                drink = tea; 
             }
         }
         private void OnSelectAddIce(object sender, RoutedEventArgs args)
         {
-            if (sender is FrameworkElement element)
+            if (DataContext is Order order)
             {
-                
+                java.AddIce();
+                drink = java; 
             }
+        }
+
+        private void OnSelectBack(Object sender, RoutedEventArgs arg)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

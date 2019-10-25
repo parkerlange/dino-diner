@@ -30,7 +30,7 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            Order order = DataContext as Order;          
+            Order order = DataContext as Order;
             DataContext = order; 
         }
 

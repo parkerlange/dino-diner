@@ -77,6 +77,9 @@ namespace PointOfSale
             {
                 side.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
             }
+
+            NavigationService.Navigate(new MenuCategorySelection());
+
         }
     }
 }

@@ -34,7 +34,7 @@
         <Button Grid.Row="1" Grid.Column="2" Tag="Orange" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Orange</TextBlock>
         </Button>
-        <Button Grid.Row="2" Grid.Column="0" Tag="Root Beer" Click="OnFlavorSelect">
+        <Button Grid.Row="2" Grid.Column="0" Tag="RootBeer" Click="OnFlavorSelect">
             <TextBlock FontSize="14" FontWeight="Bold">Root Beer</TextBlock>
         </Button>
         <Button Grid.Row="2" Grid.Column="2" Tag="Vanilla" Click="OnFlavorSelect">
