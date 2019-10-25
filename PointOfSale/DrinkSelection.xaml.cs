@@ -26,11 +26,26 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        /// <summary>
+        /// new drink that use to set in the class
+        /// </summary>
         public Drink drink { get; set; }
 
+        /// <summary>
+        /// instance of the water class
+        /// </summary>
         Water water = new Water();
+        /// <summary>
+        /// instance of  the soda sclass
+        /// </summary>
         Sodasaurus soda = new Sodasaurus();
+        /// <summary>
+        /// instance of the tea class
+        /// </summary>
         Tyrannotea tea = new Tyrannotea();
+        /// <summary>
+        /// instance of the java class
+        /// </summary>
         JurassicJava java = new JurassicJava(); 
        
         /// <summary>
@@ -159,6 +174,12 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for the change size button
+        /// changes size of the drink
+        /// </summary>
+        /// <param name="sender">object </param>
+        /// <param name="args"> button click </param>
         private void OnChangeSize(object sender, RoutedEventArgs args)
         {
             if (sender is FrameworkElement element)
@@ -167,6 +188,12 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for the hold ice button
+        /// holds ice on the water soda or tea
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="args"> button click sender</param>
         private void OnSelectHoldIce(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -175,6 +202,12 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for the add lemon button. 
+        /// adds lemon to water/tea
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="args"> button click sender</param>
         private void OnSelectLemon(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -192,7 +225,12 @@ namespace PointOfSale
                 }
             }
         }
-
+        /// <summary>
+        /// event handler for the decaf option on coffee
+        /// makes coffee decaf
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="args"> button click </param>
         private void OnSelectDecaf(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -202,6 +240,12 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for the add room for coffee feature
+        /// adds room to coffee
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="args"> button click</param>
         private void OnSelectRoom(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -211,6 +255,12 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for the sweet option for the tea
+        /// makes tea sweet
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="args"> button click </param>
         private void OnSelectSweet(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -219,6 +269,12 @@ namespace PointOfSale
                 drink = tea; 
             }
         }
+
+        /// <summary>
+        /// event handler for the add ice feature of the coffee
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="args"> button click </param>
         private void OnSelectAddIce(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -228,6 +284,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for the back button, when pressed we return to the previous window 
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="arg"> button click </param>
         private void OnSelectBack(Object sender, RoutedEventArgs arg)
         {
             NavigationService.Navigate(new MenuCategorySelection());

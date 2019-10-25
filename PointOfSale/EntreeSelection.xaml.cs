@@ -24,6 +24,9 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        /// <summary>
+        /// entree item we modify throughout the class 
+        /// </summary>
         public Entree entree { get; set; }
         /// <summary>
         /// this is the initialization for the entree selection page
@@ -33,6 +36,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        /// <summary>
+        /// event handler for the brat add to order
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="arg">button click</param>
         private void OnSelectBrontowurst(Object sender, RoutedEventArgs arg)
         {
             if (DataContext is Order order)
@@ -41,6 +49,11 @@ namespace PointOfSale
                 order.Items.Add(entree);
             }
         }
+        /// <summary>
+        /// event handler for the nuggets add to order
+        /// </summary>
+        /// <param name="sender"> object </param>
+        /// <param name="arg"> button click </param>
         private void OnSelectDinoNuggets(Object sender, RoutedEventArgs arg)
         {
             if (DataContext is Order order)
@@ -49,6 +62,12 @@ namespace PointOfSale
                 order.Items.Add(entree);
             }
         }
+
+        /// <summary>
+        /// event handler for adding burger to order
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="arg"> ubtton click</param>
         private void OnSelectSteakosaurusBurger(Object sender, RoutedEventArgs arg)
         {
             if (DataContext is Order order)
@@ -57,6 +76,11 @@ namespace PointOfSale
                 order.Items.Add(entree);
             }
         }
+        /// <summary>
+        /// event handler for adding t rex to order
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="arg">button lcikc</param>
         private void OnSelectTRexKingBurger(Object sender, RoutedEventArgs arg)
         {
             if (DataContext is Order order)
@@ -65,6 +89,12 @@ namespace PointOfSale
                 order.Items.Add(entree);
             }
         }
+
+        /// <summary>
+        /// event handler for adding pbj to order
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="arg"> button click </param>
         private void OnSelectPrehistoricPBJ(Object sender, RoutedEventArgs arg)
         {
             if (DataContext is Order order)
@@ -73,6 +103,11 @@ namespace PointOfSale
                 order.Items.Add(entree);
             }
         }
+        /// <summary>
+        /// event handler for adding wings to order
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="arg">button click </param>
         private void OnSelectPterodactylWings(Object sender, RoutedEventArgs arg)
         {
             if (DataContext is Order order)
@@ -81,6 +116,11 @@ namespace PointOfSale
                 order.Items.Add(entree);
             }
         }
+        /// <summary>
+        /// event handler for adding wrap to order
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="arg"> button click</param>
         private void OnSelectVelociWrap(Object sender, RoutedEventArgs arg)
         {
             if (DataContext is Order order)
