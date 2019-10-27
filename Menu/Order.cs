@@ -40,7 +40,7 @@ namespace DinoDiner.Menu
                 if (totalPrice < 0)
                     totalPrice = 0; 
 
-                return totalPrice; 
+                return Math.Round(totalPrice, 2); 
             }
         }
 
