@@ -35,6 +35,9 @@ namespace PointOfSale
             Order.NavigationService = OrderUI.NavigationService; 
         }
 
+        /// <summary>
+        /// this is a contructor to pass the page data onto the lower level pages
+        /// </summary>
         private void PassDataContentToPage()
         {
             if (OrderUI.Content is Page page)
@@ -43,11 +46,21 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for loading the data into the new page
+        /// </summary>
+        /// <param name="sender">button click</param>
+        /// <param name="args">argument</param>
         private void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
             PassDataContentToPage();
         }
 
+        /// <summary>
+        /// this is an event handler for passing data to the next page in the tree
+        /// </summary>
+        /// <param name="sender">click</param>
+        /// <param name="args">arument</param>
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             PassDataContentToPage();

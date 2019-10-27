@@ -25,6 +25,9 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        /// <summary>
+        /// side class instance used for setting side 
+        /// </summary>
         public Side side { get; set; }
         /// <summary>
         /// initialization of the side selection page
@@ -33,13 +36,21 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// this is a constructor for the side selection
+        /// </summary>
+        /// <param name="side"> side passed in to go back with click</param>
         public SideSelection(Side side)
         {
             InitializeComponent();
             this.side = side; 
         }
 
+        /// <summary>
+        /// event handler for adding fries to order via button click
+        /// </summary>
+        /// <param name="sender"> button clicked</param>
+        /// <param name="args"> arguement</param>
         private void OnSelectFryceritops(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -49,6 +60,11 @@ namespace PointOfSale
             } 
         }
 
+        /// <summary>
+        /// event handler for adding mac to order via button click
+        /// </summary>
+        /// <param name="sender">button clicked</param>
+        /// <param name="args">argument</param>
         private void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -58,6 +74,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for ading mezzorella sticks to order via button click
+        /// </summary>
+        /// <param name="sender">button clicked</param>
+        /// <param name="args">argument</param>
         private void OnSelectMezzorellaSticks(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -67,6 +88,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// event handler for adding tots to order via button click
+        /// </summary>
+        /// <param name="sender">button clicked</param>
+        /// <param name="args">argument</param>
         private void OnSelectTriceritots(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -76,7 +102,11 @@ namespace PointOfSale
             }
         }
        
-
+        /// <summary>
+        /// event handler for setting the size of the side item
+        /// </summary>
+        /// <param name="sender">wsize button clicked</param>
+        /// <param name="args">argument</param>
         private void OnChangeSize(object sender, RoutedEventArgs args)
         {
             if (sender is FrameworkElement element)

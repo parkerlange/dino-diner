@@ -37,6 +37,16 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// this is the initialization for the entree selection page
+        /// </summary>
+        /// <param name="entree">entree item passed in</param>
+        public EntreeSelection(Entree entree)
+        {
+            InitializeComponent();
+            this.entree = entree; 
+        }
+
+        /// <summary>
         /// event handler for the brat add to order
         /// </summary>
         /// <param name="sender"> object </param>
