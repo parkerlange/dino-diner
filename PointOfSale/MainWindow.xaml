@@ -12,6 +12,14 @@
     </Window.DataContext>
     <DockPanel>
         <local:OrderList DockPanel.Dock="Right" MinWidth="200" x:Name="Order"/>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Click="OnReturnToCategorySelection" DockPanel.Dock="Bottom" Grid.Column="1">Return To Category Selection</Button>
+        </Grid>
         <Frame Source="MenuCategorySelection.xaml" Name="OrderUI" LoadCompleted="OnLoadCompleted" DataContextChanged="OnDataContextChanged"></Frame>
     </DockPanel>
 </Window>

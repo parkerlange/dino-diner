@@ -124,8 +124,7 @@ namespace PointOfSale
                 order.Add(entree);
             }
 
-            NavigationService.Navigate(new MenuCategorySelection());
-
+            NavigationService.Navigate(new CustomizePrehistoricPBJ((PrehistoricPBJ)entree));
         }
         /// <summary>
         /// event handler for adding wings to order
@@ -141,7 +140,6 @@ namespace PointOfSale
             }
 
             NavigationService.Navigate(new MenuCategorySelection());
-
         }
         /// <summary>
         /// event handler for adding wrap to order

@@ -54,15 +54,58 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+            // set all buttons to off
+            FlavorButton.Visibility = Visibility.Hidden;
+            LemonButton.Visibility = Visibility.Hidden;
+            HoldIceButton.Visibility = Visibility.Hidden;
+            DecafButton.Visibility = Visibility.Hidden;
+            RoomButton.Visibility = Visibility.Hidden;
+            AddIceButton.Visibility = Visibility.Hidden;
+            SweetButton.Visibility = Visibility.Hidden;
         }
 
         /// <summary>
-        /// this is the initialization for thhe drink page
+        /// this is the initialization for thhe drink page, based on the drink pased in
+        /// the drink will change the drink buttons
         /// </summary>
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
+            // set all buttons to off
+            FlavorButton.Visibility = Visibility.Hidden;
+            LemonButton.Visibility = Visibility.Hidden;
+            HoldIceButton.Visibility = Visibility.Hidden;
+            DecafButton.Visibility = Visibility.Hidden;
+            RoomButton.Visibility = Visibility.Hidden;
+            AddIceButton.Visibility = Visibility.Hidden;
+            SweetButton.Visibility = Visibility.Hidden;
             this.drink = drink; 
+
+            if (drink is Sodasaurus)
+            {
+                FlavorButton.Visibility = Visibility.Visible;
+                HoldIceButton.Visibility = Visibility.Visible;
+            }
+
+            if (drink is JurassicJava)
+            {
+                DecafButton.Visibility = Visibility.Visible;
+                RoomButton.Visibility = Visibility.Visible;
+                AddIceButton.Visibility = Visibility.Visible;
+            }
+
+            if (drink is Tyrannotea)
+            {
+                SweetButton.Visibility = Visibility.Visible;
+                LemonButton.Visibility = Visibility.Visible;
+                HoldIceButton.Visibility = Visibility.Visible;
+            }
+
+            if (drink is Water)
+            {
+                LemonButton.Visibility = Visibility.Visible;
+                HoldIceButton.Visibility = Visibility.Visible;
+            }
         }
         /// <summary>
         /// if the flavor button is pressed,  we go to the flavors page

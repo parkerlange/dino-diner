@@ -66,24 +66,24 @@
         <Button Click ="FlavorClick" Name ="FlavorButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden">
             <TextBlock FontSize="14" FontWeight="Bold">Flavor</TextBlock>
         </Button>
-        <Button Name="LemonButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden" Click="OnSelectLemon">
+        <Button Name="LemonButton" Grid.Row="2" Grid.Column="3" Click="OnSelectLemon">
             <TextBlock FontSize="14" FontWeight="Bold">Add Lemon</TextBlock>
         </Button>
-        <Button Name = "HoldIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden" Click="OnSelectHoldIce">
+        <Button Name = "HoldIceButton" Grid.Row="3" Grid.Column="3" Click="OnSelectHoldIce">
             <TextBlock FontSize="14" FontWeight="Bold">Hold Ice</TextBlock>
         </Button>
 
-        <Button Name ="DecafButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden" Click="OnSelectDecaf">
+        <Button Name ="DecafButton" Grid.Row="1" Grid.Column="3" Click="OnSelectDecaf">
             <TextBlock FontSize="14" FontWeight="Bold">Decaf</TextBlock>
         </Button>
-        <Button Name="RoomButton" Grid.Row="2" Grid.Column="3" Visibility="Hidden" Click="OnSelectRoom">
+        <Button Name="RoomButton" Grid.Row="2" Grid.Column="3" Click="OnSelectRoom">
             <TextBlock FontSize="14" FontWeight="Bold">Room for Cream</TextBlock>
         </Button>
-        <Button Name = "AddIceButton" Grid.Row="3" Grid.Column="3" Visibility="Hidden" Click="OnSelectAddIce">
+        <Button Name = "AddIceButton" Grid.Row="3" Grid.Column="3" Click="OnSelectAddIce">
             <TextBlock FontSize="14" FontWeight="Bold">Add Ice</TextBlock>
         </Button>
 
-        <Button Name ="SweetButton" Grid.Row="1" Grid.Column="3" Visibility="Hidden" Click="OnSelectSweet">
+        <Button Name ="SweetButton" Grid.Row="1" Grid.Column="3" Click="OnSelectSweet">
             <TextBlock FontSize="14" FontWeight="Bold">Sweet</TextBlock>
         </Button>
        

@@ -61,7 +61,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">button click</param>
         /// <param name="args">argument</param>
-       private void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
+       private void OnSelectionChanged(object sender, EventArgs args)
         {
             if (OrderItems.SelectedItem is Side side)
             {
