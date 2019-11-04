@@ -56,10 +56,15 @@ namespace DinoDiner.Menu
             {
                 side = value;
                 side.Size = size;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
-        private Drink drink = new Sodasaurus();
+    private Drink drink = new Sodasaurus();
         /// <summary>
         /// creates an instance of the drink the user selects 
         /// </summary>
@@ -115,6 +120,7 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 

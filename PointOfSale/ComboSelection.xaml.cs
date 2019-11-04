@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu; 
 
 namespace PointOfSale
 {
@@ -23,6 +24,7 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        private CretaceousCombo combo; 
         /// <summary>
         /// thhis is the initialization of the combo selection page
         /// </summary>
@@ -35,9 +37,104 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"> the button pressed</param>
         /// <param name="arg"> what happens when a press is made</param>
-        private void CustomizeCombo(Object sender, RoutedEventArgs arg)
+        private void onCustomizeBrontowurst(Object sender, RoutedEventArgs arg)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new Brontowurst());
+                order.Add(combo);
+            }
+
+            NavigationService.Navigate(new CustomizeBrontowurst(combo));
+        }
+        /// <summary>
+        /// when the customize combo button is pressed, the combo window is called and opened
+        /// </summary>
+        /// <param name="sender"> the button pressed</param>
+        /// <param name="arg"> what happens when a press is made</param>
+        private void onCustomizeDinoNuggets(Object sender, RoutedEventArgs arg)
+        {
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new DinoNuggets());
+                order.Add(combo);
+            }
+            NavigationService.Navigate(new CustomizeDinoNuggets(combo));
+        }
+        /// <summary>
+        /// when the customize combo button is pressed, the combo window is called and opened
+        /// </summary>
+        /// <param name="sender"> the button pressed</param>
+        /// <param name="arg"> what happens when a press is made</param>
+        private void onCustomizeSteakosaurus(Object sender, RoutedEventArgs arg)
+        {
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new SteakosaurusBurger());
+                order.Add(combo);
+            }
+
+            NavigationService.Navigate(new CustomizeSteakosaurusBurger(combo));
+        }
+        /// <summary>
+        /// when the customize combo button is pressed, the combo window is called and opened
+        /// </summary>
+        /// <param name="sender"> the button pressed</param>
+        /// <param name="arg"> what happens when a press is made</param>
+        private void onCustomizeTRex(Object sender, RoutedEventArgs arg)
+        {
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new TRexKingBurger());
+                order.Add(combo);
+            }
+
+            NavigationService.Navigate(new CustomizeTRexBurger(combo));
+        }
+        /// <summary>
+        /// when the customize combo button is pressed, the combo window is called and opened
+        /// </summary>
+        /// <param name="sender"> the button pressed</param>
+        /// <param name="arg"> what happens when a press is made</param>
+        private void onCustomizePBJ(Object sender, RoutedEventArgs arg)
+        {
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new PrehistoricPBJ());
+                order.Add(combo);
+            }
+
+            NavigationService.Navigate(new CustomizePrehistoricPBJ(combo));
+        }
+        /// <summary>
+        /// when the customize combo button is pressed, the combo window is called and opened
+        /// </summary>
+        /// <param name="sender"> the button pressed</param>
+        /// <param name="arg"> what happens when a press is made</param>
+        private void onCustomizeWings(Object sender, RoutedEventArgs arg)
+        {
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new PterodactylWings());
+                order.Add(combo);
+            }
+
+            NavigationService.Navigate(new CustomizeCombo(combo));
+        }
+        /// <summary>
+        /// when the customize combo button is pressed, the combo window is called and opened
+        /// </summary>
+        /// <param name="sender"> the button pressed</param>
+        /// <param name="arg"> what happens when a press is made</param>
+        private void onCustomizeWrap(Object sender, RoutedEventArgs arg)
+        {
+            if (DataContext is Order order)
+            {
+                combo = new CretaceousCombo(new VelociWrap());
+                order.Add(combo);
+            }
+
+            NavigationService.Navigate(new CustomizeVelociWrap(combo));
         }
     }
 }

@@ -24,27 +24,64 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizePrehistoricPBJ : Page
     {
-        private PrehistoricPBJ pbj; 
+        /// <summary>
+        /// private pbj to modify
+        /// </summary>
+        private PrehistoricPBJ pbj;
+        /// <summary>
+        /// private combo to modify
+        /// </summary>
+        private CretaceousCombo combo;
 
+        /// <summary>
+        /// constructor for the pbj class
+        /// </summary>
+        /// <param name="pbj">pbj object to modify passed in</param>
         public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
         {
             InitializeComponent();
             this.pbj = pbj; 
         }
 
+        /// <summary>
+        /// constructor for the pbj class
+        /// </summary>
+        /// <param name="pbj">pbj object to modify passed in</param>
+        public CustomizePrehistoricPBJ(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+            pbj = (PrehistoricPBJ)combo.Entree;
+        }
+        /// <summary>
+        /// button press for holding peanut butter
+        /// </summary>
+        /// <param name="sender">sender is button</param>
+        /// <param name="args"> arg is what to do</param>
         private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
         {
             pbj.HoldPeanutButter();
         }
-
+        /// <summary>
+        /// button click for holding jelly
+        /// </summary>
+        /// <param name="sender">sender is button</param>
+        /// <param name="args"> arg is what to do</param>
         private void OnHoldJelly(object sender, RoutedEventArgs args)
         {
             pbj.HoldJelly(); 
         }
-
+        /// <summary>
+        /// button click for going back a page
+        /// </summary>
+        /// <param name="sender">sender is button</param>
+        /// <param name="args"> arg is what to do</param>
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.GoBack(); 
+            if (combo != null)
+                NavigationService.Navigate(new CustomizeCombo(combo));
+            else
+                NavigationService.GoBack();
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Author: Parker Lange
+ * CustomizePterodactyWings.xaml.cs
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizePterodactylWings : Page
     {
+        /// <summary>
+        /// constructor for the class
+        /// </summary>
         public CustomizePterodactylWings()
         {
             InitializeComponent();

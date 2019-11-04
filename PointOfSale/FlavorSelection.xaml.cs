@@ -28,6 +28,7 @@ namespace PointOfSale
         /// instance of the sodasaurus class
         /// </summary>
         Sodasaurus sd = new Sodasaurus();
+        CretaceousCombo combo; 
         /// <summary>
         /// this is the initialization for the flavors of soda menu
         /// </summary>
@@ -35,6 +36,12 @@ namespace PointOfSale
         {
             InitializeComponent();
             sd = soda; 
+        }
+
+        public FlavorSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
         }
 
         /// <summary>
@@ -47,9 +54,14 @@ namespace PointOfSale
             if (sender is FrameworkElement element)
             {
                 sd.Flavor = (DinoDiner.Menu.SodasaurusFlavor)Enum.Parse(typeof(DinoDiner.Menu.SodasaurusFlavor), element.Tag.ToString());
+                if (combo != null)
+                    combo.Drink = sd; 
             }
 
-            NavigationService.Navigate(new DrinkSelection(sd));
+            if (combo != null)
+                NavigationService.Navigate(new DrinkSelection(combo));
+            else 
+                NavigationService.Navigate(new DrinkSelection(sd));
         }
     }
 }
