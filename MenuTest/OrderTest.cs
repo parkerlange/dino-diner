@@ -28,7 +28,7 @@ namespace MenuTest
             Order o = new Order();
             o.Add(c);
             //o.SalesTaxRate = 0.05; 
-            Assert.Equal<double>(0.60, o.SalesTaxCost);
+            Assert.Equal<double>(0.72, o.SalesTaxCost);
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace MenuTest
             Order o = new Order();
             o.Add(c);
             //o.SalesTaxRate = 0.05;
-            Assert.Equal<double>(12.60, o.TotalCost);
+            Assert.Equal<double>(12.72, o.TotalCost);
         }
 
         [Fact]

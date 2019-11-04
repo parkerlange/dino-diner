@@ -43,17 +43,17 @@ namespace DinoDiner.Menu
                 return Math.Round(totalPrice, 2); 
             }
         }
-
+        private double salesTaxRate = 0.06; 
         /// <summary>
         /// this is the sales tax rate
         /// </summary>
         public double SalesTaxRate
         {
-            get { return SalesTaxRate; }
+            get { return salesTaxRate; }
             set
             {
                 if (value < 0) return;
-                SalesTaxRate = value;
+                salesTaxRate = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxRate"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
