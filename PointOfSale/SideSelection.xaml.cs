@@ -29,6 +29,9 @@ namespace PointOfSale
         /// side class instance used for setting side 
         /// </summary>
         public Side side { get; set; }
+        /// <summary>
+        /// combo object passed in
+        /// </summary>
         private CretaceousCombo combo; 
         /// <summary>
         /// initialization of the side selection page
@@ -49,7 +52,7 @@ namespace PointOfSale
         /// <summary>
         /// this is a constructor for the side selection
         /// </summary>
-        /// <param name="side"> side passed in to go back with click</param>
+        /// <param name="combo"> combo passed in to go back with click</param>
         public SideSelection(CretaceousCombo combo)
         {
             InitializeComponent();
