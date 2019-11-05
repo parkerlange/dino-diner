@@ -51,7 +51,7 @@
         <RadioButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Small" Click="OnChangeSize">
             <TextBlock FontSize="14" FontWeight="Bold">Small</TextBlock>
         </RadioButton>
-        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Medium" Click="OnChangeSize">
+        <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Medium" Click="OnChangeSize" Name ="Medium">
             <TextBlock FontSize="14" FontWeight="Bold">Medium</TextBlock>
         </RadioButton>
         <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Large" Click="OnChangeSize">
