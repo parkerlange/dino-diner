@@ -12,3 +12,14 @@ body {
     padding-right: 15px;
 }
 
+#imageBanner, img{
+    width:100%; 
+    height: 450px; 
+}
+
+#listItems {
+    font-size: 40px; 
+    padding-bottom:10px; 
+    padding-top: 10px;
+}
+

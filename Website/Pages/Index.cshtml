@@ -4,4 +4,24 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1>Hello World</h1>
+<div id="imageBanner">
+    <figure>
+        <img src="~/Assets/DinoDiner-24.png"/>
+    </figure>
+</div>
+
+<div id="listItems">
+    <body>
+        <ul>
+            <li>
+                <a asp-page="/Menu">Menu</a>
+            </li>
+            <li>
+                <a asp-page="/Privacy">Privacy</a>
+            </li>
+            <li>
+                <a asp-page="/About">About</a>
+            </li>
+        </ul>
+    </body>
+</div>
