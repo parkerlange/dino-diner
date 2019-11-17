@@ -5,8 +5,16 @@
 }
 
 <h1>Menu</h1>
-
 <h2>Combos</h2>
+@for (int i = 0; i < 8; i++)
+{
+    <div class="menu-item">
+        @foreach (string input in Model.Menu.AvailableCombos.ToString())
+        {
+
+        }
+    </div>
+}
 <h2>Entrees</h2>
 <h2>Sides</h2>
 <h2>Drinks</h2>
