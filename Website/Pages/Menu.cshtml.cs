@@ -10,10 +10,16 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
-        public Menu Menu;
+        public Menu Menu
+        {
+            get
+            {
+                return new Menu(); 
+            }
+        }
         public void OnGet()
         {
-            Menu = new Menu(); 
+
         }
 
     }
