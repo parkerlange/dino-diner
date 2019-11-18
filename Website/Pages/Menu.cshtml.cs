@@ -11,10 +11,9 @@ namespace Website.Pages
     public class MenuModel : PageModel
     {
         public Menu Menu;
-        public string items = Menu.ToString(); 
         public void OnGet()
         {
-            Menu = new Menu();
+            Menu = new Menu(); 
         }
 
     }
