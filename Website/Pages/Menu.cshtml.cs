@@ -41,6 +41,7 @@ namespace Website.Pages
 
         public void OnGet()
         {
+            //ComboItems = Menu.AvailableCombos;
             ComboItems = AllCombos;
             EntreeItems = AllEntrees;
             SideItems = AllSides;
@@ -168,6 +169,7 @@ namespace Website.Pages
                     if (!ingredients.Contains(item.Ingredients[i]))
                     {
                         results.Add(item);
+                        break;
                     }
                 }
             }
