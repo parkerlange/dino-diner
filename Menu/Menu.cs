@@ -12,6 +12,27 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Menu
     {
+        
+        public List<String> PossibleIngredients
+        {
+            get
+            {
+                List<string> possibleIngredients = new List<string>();
+                foreach (IMenuItem item in AvailableMenuItems)
+                {
+                    for(int i = 0; i < item.Ingredients.Count; i++)
+                    {
+                        if (!possibleIngredients.Contains(item.Ingredients[i]))
+                        {
+                            possibleIngredients.Add(item.Ingredients[i]);
+                        }
+                    }
+                }
+
+                return possibleIngredients; 
+            }
+        }
+        
         /// <summary>
         /// this is the list for all items on the menu that are available currently
         /// </summary>

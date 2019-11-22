@@ -26,6 +26,8 @@ namespace Website.Pages
         public float? minimumPrice { get; set; }
         [BindProperty]
         public float? maximumPrice { get; set; }
+        [BindProperty]
+        public List<string> ingredient { get; set; } = new List<string>();
 
         public List<IMenuItem> AllCombos { get { return Menu.AvailableCombos; } set { } }
         public List<IMenuItem> AllEntrees { get { return Menu.AvailableEntrees; } set { } }
@@ -80,6 +82,15 @@ namespace Website.Pages
                 SideItems = FilterByMaxPrice(SideItems, (float)maximumPrice);
                 DrinkItems = FilterByMaxPrice(DrinkItems, (float)maximumPrice);
             }
+            
+            if (ingredient.Count != 0)
+            {
+                ComboItems = FilterByIngredients(ComboItems, ingredient);
+                EntreeItems = FilterByIngredients(EntreeItems, ingredient);
+                SideItems = FilterByIngredients(SideItems, ingredient);
+                DrinkItems = FilterByIngredients(DrinkItems, ingredient);
+            }
+            
         }
 
         public List<IMenuItem> Search(List<IMenuItem> menu, string searchString)
@@ -141,6 +152,23 @@ namespace Website.Pages
                 if (maxPrice >= item.Price)
                 {
                     results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        public static List<IMenuItem> FilterByIngredients(List<IMenuItem> menu, List<string> ingredients)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+            foreach (IMenuItem item in menu)
+            {
+                for(int i = 0; i < item.Ingredients.Count; i++)
+                {
+                    if (!ingredients.Contains(item.Ingredients[i]))
+                    {
+                        results.Add(item);
+                    }
                 }
             }
 
