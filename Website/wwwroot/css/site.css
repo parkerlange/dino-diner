@@ -23,3 +23,36 @@ body {
     padding-top: 10px;
 }
 
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+}
+
+h4 {
+    margin-bottom: 5px;
+}
+
+form {
+    width: 300px;
+    background-color: lightgray;
+    flex-grow: 0;
+    padding: 50px;
+}
+
+form #commands {
+    position:absolute;
+    right: 0; 
+}
+
+.menu-item {
+    border-bottom: 1px dashed gray;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+
