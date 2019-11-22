@@ -12,8 +12,10 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Menu
     {
-        
-        public List<String> PossibleIngredients
+        /// <summary>
+        /// this is a list of the ingredients used in all of the menu items
+        /// </summary>
+        public List<string> PossibleIngredients
         {
             get
             {

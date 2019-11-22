@@ -136,10 +136,10 @@
 
         <h4>Exclude Ingredients</h4>
         <div class="checkbox-list">
-            @foreach (string ingredient in @Model.Menu.PossibleIngredients)
+            @foreach(string ingredient in @Model.Menu.PossibleIngredients)
             {
                 <label>
-                    <input type="checkbox" name="ingredient" value=@ingredient checked= "@Model.ingredient.Contains(ingredient)" />
+                    <input type="checkbox" name="ingredient" value="@ingredient" checked= "@Model.ingredient.Contains(ingredient)" />
                     @ingredient
                 </label>
             }

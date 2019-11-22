@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Name: Parker Lange
+ * Menu.cshtml.cs
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,8 +12,14 @@ using DinoDiner.Menu;
 
 namespace Website.Pages
 {
+    /// <summary>
+    /// class used for the backend of the webpage interface
+    /// </summary>
     public class MenuModel : PageModel
     {
+        /// <summary>
+        /// creat an instance of the menu class
+        /// </summary>
         public Menu Menu
         {
             get
@@ -18,42 +28,58 @@ namespace Website.Pages
             }
         }
 
+        /// <summary>
+        /// this is a string containing the search filter 
+        /// </summary>
         [BindProperty]
         public string search { get; set; }
+        /// <summary>
+        /// this is a list of string items containing the menu item type 
+        /// </summary>
         [BindProperty]
         public List<string> category { get; set; } = new List<string>();
+        /// <summary>
+        /// this is a float contaiing the minumum price
+        /// </summary>
         [BindProperty]
         public float? minimumPrice { get; set; }
+        /// <summary>
+        /// this is a float contaiing the maximum price
+        /// </summary>
         [BindProperty]
         public float? maximumPrice { get; set; }
+        /// <summary>
+        /// this is a list of the string ingredients that the user does not want 
+        /// </summary>
         [BindProperty]
         public List<string> ingredient { get; set; } = new List<string>();
-
-        public List<IMenuItem> AllCombos { get { return Menu.AvailableCombos; } set { } }
-        public List<IMenuItem> AllEntrees { get { return Menu.AvailableEntrees; } set { } }
-        public List<IMenuItem> AllDrinks { get { return Menu.AvailableDrinks; } set { } }
-        public List<IMenuItem> AllSides { get { return Menu.AvailableSides; } set { } }
 
         public List<IMenuItem> ComboItems;
         public List<IMenuItem> EntreeItems;
         public List<IMenuItem> DrinkItems;
         public List<IMenuItem> SideItems;
 
+        /// <summary>
+        /// public method for the get form
+        /// </summary>
         public void OnGet()
         {
-            //ComboItems = Menu.AvailableCombos;
-            ComboItems = AllCombos;
-            EntreeItems = AllEntrees;
-            SideItems = AllSides;
-            DrinkItems = AllDrinks;
+            ComboItems = Menu.AvailableCombos;
+            EntreeItems = Menu.AvailableEntrees;
+            SideItems = Menu.AvailableSides;
+            DrinkItems = Menu.AvailableDrinks;
+            
         }
 
+        /// <summary>
+        /// public method for the post form, inside here the functions to filter are called
+        /// </summary>
         public void OnPost()
         {
-            ComboItems = AllCombos;
-            EntreeItems = AllEntrees;
-            SideItems = AllSides;
-            DrinkItems = AllDrinks;
+            ComboItems = Menu.AvailableCombos;
+            EntreeItems = Menu.AvailableEntrees;
+            SideItems = Menu.AvailableSides;
+            DrinkItems = Menu.AvailableDrinks;
 
             if (search != null)
             {
@@ -94,6 +120,12 @@ namespace Website.Pages
             
         }
 
+        /// <summary>
+        /// This method filters our menu by what the user searches, each item must contain this string
+        /// </summary>
+        /// <param name="menu">list of menu items</param>
+        /// <param name="searchString">string used to filter our menu</param>
+        /// <returns>list containing remaining menu items</returns>
         public List<IMenuItem> Search(List<IMenuItem> menu, string searchString)
         {
             List<IMenuItem> result = new List<IMenuItem>();
@@ -108,6 +140,10 @@ namespace Website.Pages
             return result;
         }
 
+        /// <summary>
+        /// In here, we filter the menu by which type of item the user wants
+        /// </summary>
+        /// <param name="category">this is the type of menu item</param>
         public void FilterByCategory(List<string> category)
         {
             if (!category.Contains("Combo"))
@@ -131,6 +167,12 @@ namespace Website.Pages
             }
         }
 
+        /// <summary>
+        /// In here, the user selects a minimum price of item they are looking for, and we filter the menu based on this
+        /// </summary>
+        /// <param name="menu">menu to modify</param>
+        /// <param name="minPrice">price to filter the menu by</param>
+        /// <returns></returns>
         public static List<IMenuItem> FilterByMinPrice(List<IMenuItem> menu, float minPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
@@ -145,6 +187,12 @@ namespace Website.Pages
             return results;
         }
 
+        /// <summary>
+        /// In here, the user selects a maximum price of item they are looking for, and we filter the menu based on this
+        /// </summary>
+        /// <param name="menu">menu to modify</param>
+        /// <param name="minPrice">price to filter the menu by</param>
+        /// <returns></returns>
         public static List<IMenuItem> FilterByMaxPrice(List<IMenuItem> menu, float maxPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
@@ -159,18 +207,32 @@ namespace Website.Pages
             return results;
         }
 
+        /// <summary>
+        /// In filter by ingredients, the user selects ingredients they do not want
+        /// and then we filter the passed in menu by these items. If the menu item contains this item
+        /// then we do not add it
+        /// </summary>
+        /// <param name="menu">menu to modify</param>
+        /// <param name="ingredients">list of strings containing the menu items the user doesnt want</param>
+        /// <returns></returns>
         public static List<IMenuItem> FilterByIngredients(List<IMenuItem> menu, List<string> ingredients)
         {
+            bool flag; 
             List<IMenuItem> results = new List<IMenuItem>();
             foreach (IMenuItem item in menu)
             {
+                flag = false; 
                 for(int i = 0; i < item.Ingredients.Count; i++)
                 {
-                    if (!ingredients.Contains(item.Ingredients[i]))
+                    if (ingredients.Contains(item.Ingredients[i]))
                     {
-                        results.Add(item);
-                        break;
+                        flag = true; 
                     }
+                }
+
+                if (flag == false)
+                {
+                    results.Add(item);
                 }
             }
 
