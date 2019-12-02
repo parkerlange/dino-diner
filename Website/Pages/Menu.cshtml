@@ -105,21 +105,21 @@
         <input type="text" name="search" value="@Model.search" />
         <input type="submit" value="Search and Filter" name="search" id="search" />
         <h4>Menu Category</h4>
-        <div class="checkbox-list">
+        <div class="menu-category" >
             <label>
-                <input type="checkbox" name="category" value="Combo" checked="@Model.category.Contains("Combo")" />
+                <input type="checkbox" name="menuCategory" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
                 Combo
             </label>
             <label>
-                <input type="checkbox" name="category" value="Entree" checked="@Model.category.Contains("Entree")" />
+                <input type="checkbox" name="menuCategory" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
                 Entree
             </label>
             <label>
-                <input type="checkbox" name="category" value="Side" checked="@Model.category.Contains("Side")" />
+                <input type="checkbox" name="menuCategory" value="Side" checked="@Model.menuCategory.Contains("Side")" />
                 Side
             </label>
             <label>
-                <input type="checkbox" name="category" value="Drink" checked="@Model.category.Contains("Drink")" />
+                <input type="checkbox" name="menuCategory" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
                 Drink
             </label>
         </div>
@@ -135,7 +135,7 @@
         </label>
 
         <h4>Exclude Ingredients</h4>
-        <div class="checkbox-list">
+        <div class="exclude-ingredients">
             @foreach(string ingredient in @Model.Menu.PossibleIngredients)
             {
                 <label>

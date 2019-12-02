@@ -37,7 +37,7 @@ namespace Website.Pages
         /// this is a list of string items containing the menu item type 
         /// </summary>
         [BindProperty]
-        public List<string> category { get; set; } = new List<string>();
+        public List<string> menuCategory { get; set; } = new List<string>();
         /// <summary>
         /// this is a float contaiing the minumum price
         /// </summary>
@@ -89,9 +89,9 @@ namespace Website.Pages
                 DrinkItems = Search(DrinkItems, search);
             }
 
-            if (category.Count != 0)
+            if (menuCategory.Count != 0)
             {
-                FilterByCategory(category);
+                FilterByCategory(menuCategory);
             }
 
             if (minimumPrice != null)

@@ -30,7 +30,12 @@ body {
 	justify-content: space-between; 
 }
 
-.checkbox-list {
+.exclude-ingredients {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-category {
     display: flex;
     flex-direction: column;
 }
