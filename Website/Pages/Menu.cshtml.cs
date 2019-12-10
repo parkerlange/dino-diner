@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using DinoDiner.Menu; 
+using DinoDiner.Menu;
 
 namespace Website.Pages
 {
@@ -27,7 +27,8 @@ namespace Website.Pages
                 return new Menu();
             }
         }
-
+        
+        public Size Size { get; set; }
         /// <summary>
         /// this is a string containing the search filter 
         /// </summary>
@@ -37,7 +38,7 @@ namespace Website.Pages
         /// this is a list of string items containing the menu item type 
         /// </summary>
         [BindProperty]
-        public List<string> menuCategory { get; set; } = new List<string>();
+        public List<string> menuCategory { get; set; } = new List<string>() {"CretaceousCombo", "Entree", "Side", "Drink" };
         /// <summary>
         /// this is a float contaiing the minumum price
         /// </summary>
@@ -54,10 +55,22 @@ namespace Website.Pages
         [BindProperty]
         public List<string> ingredient { get; set; } = new List<string>();
 
-        public List<IMenuItem> ComboItems;
-        public List<IMenuItem> EntreeItems;
-        public List<IMenuItem> DrinkItems;
-        public List<IMenuItem> SideItems;
+        /// <summary>
+        /// IEnumerable item in order to filter the combos with the LINQ interface
+        /// </summary>
+        public IEnumerable<CretaceousCombo> ComboItems;
+        /// <summary>
+        /// IEnumerable item in order to filter the entrees with the LINQ interface
+        /// </summary>
+        public IEnumerable<IMenuItem> EntreeItems;
+        /// <summary>
+        /// IEnumerable item in order to filter the drinks with the LINQ interface
+        /// </summary>
+        public IEnumerable<Drink> DrinkItems;
+        /// <summary>
+        /// IEnumerable item in order to filter the sides with the LINQ interface
+        /// </summary>
+        public IEnumerable<Side> SideItems;
 
         /// <summary>
         /// public method for the get form
@@ -68,7 +81,7 @@ namespace Website.Pages
             EntreeItems = Menu.AvailableEntrees;
             SideItems = Menu.AvailableSides;
             DrinkItems = Menu.AvailableDrinks;
-            
+
         }
 
         /// <summary>
@@ -81,43 +94,59 @@ namespace Website.Pages
             SideItems = Menu.AvailableSides;
             DrinkItems = Menu.AvailableDrinks;
 
+            if (menuCategory != null)
+            {
+                ComboItems = Menu.AvailableMenuItems.OfType<CretaceousCombo>();
+                EntreeItems = Menu.AvailableMenuItems.OfType<Entree>();
+                SideItems = Menu.AvailableMenuItems.OfType<Side>();
+                DrinkItems = Menu.AvailableDrinks.OfType<Drink>();
+            }
+
             if (search != null)
             {
-                ComboItems = Search(ComboItems, search);
-                EntreeItems = Search(EntreeItems, search);
-                SideItems = Search(SideItems, search);
-                DrinkItems = Search(DrinkItems, search);
+                ComboItems = ComboItems.Where(combo => combo.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
+                EntreeItems = EntreeItems.Where(entree => entree.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
+                SideItems = SideItems.Where(side => side.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
+                DrinkItems = DrinkItems.Where(combo => combo.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
             }
 
             if (menuCategory.Count != 0)
-            {
-                FilterByCategory(menuCategory);
+            { 
+                foreach (string item in menuCategory)
+                {
+                    ComboItems = ComboItems.OfType<CretaceousCombo>();
+                    EntreeItems = EntreeItems.OfType<Entree>();
+                    SideItems = SideItems.OfType<Side>();
+                    DrinkItems = DrinkItems.OfType<Drink>();
+                }
             }
 
             if (minimumPrice != null)
             {
-                ComboItems = FilterByMinPrice(ComboItems, (float)minimumPrice);
-                EntreeItems = FilterByMinPrice(EntreeItems, (float)minimumPrice);
-                SideItems = FilterByMinPrice(SideItems, (float)minimumPrice);
-                DrinkItems = FilterByMinPrice(DrinkItems, (float)minimumPrice);
+                ComboItems = ComboItems.Where(combo => combo.Price > minimumPrice);
+                EntreeItems = EntreeItems.Where(entree => entree.Price > minimumPrice);
+                SideItems = SideItems.Where(side => side.Price > minimumPrice);
+                DrinkItems = DrinkItems.Where(combo => combo.Price > minimumPrice);
             }
 
             if (maximumPrice != null)
             {
-                ComboItems = FilterByMaxPrice(ComboItems, (float)maximumPrice);
-                EntreeItems = FilterByMaxPrice(EntreeItems, (float)maximumPrice);
-                SideItems = FilterByMaxPrice(SideItems, (float)maximumPrice);
-                DrinkItems = FilterByMaxPrice(DrinkItems, (float)maximumPrice);
+                ComboItems = ComboItems.Where(combo => combo.Price < maximumPrice);
+                EntreeItems = EntreeItems.Where(entree => entree.Price < maximumPrice);
+                SideItems = SideItems.Where(side => side.Price < maximumPrice);
+                DrinkItems = DrinkItems.Where(combo => combo.Price <maximumPrice);
             }
             
             if (ingredient.Count != 0)
             {
-                ComboItems = FilterByIngredients(ComboItems, ingredient);
-                EntreeItems = FilterByIngredients(EntreeItems, ingredient);
-                SideItems = FilterByIngredients(SideItems, ingredient);
-                DrinkItems = FilterByIngredients(DrinkItems, ingredient);
+                foreach (string item in ingredient)
+                {
+                    ComboItems = ComboItems.Where(combo => !combo.Ingredients.Contains(item));
+                    EntreeItems = EntreeItems.Where(entree => !entree.Ingredients.Contains(item));
+                    SideItems = SideItems.Where(side => !side.Ingredients.Contains(item));
+                    DrinkItems = DrinkItems.Where(combo => !combo.Ingredients.Contains(item));
+                }
             }
-            
         }
 
         /// <summary>
@@ -148,7 +177,7 @@ namespace Website.Pages
         {
             if (!category.Contains("Combo"))
             {
-                ComboItems = new List<IMenuItem>(); 
+                ComboItems = new List<CretaceousCombo>(); 
             }
 
             if (!category.Contains("Entree"))
@@ -158,12 +187,12 @@ namespace Website.Pages
 
             if (!category.Contains("Side"))
             {
-                SideItems = new List<IMenuItem>();
+                SideItems = new List<Side>();
             }
 
             if (!category.Contains("Drink"))
             {
-                DrinkItems = new List<IMenuItem>();
+                DrinkItems = new List<Drink>();
             }
         }
 

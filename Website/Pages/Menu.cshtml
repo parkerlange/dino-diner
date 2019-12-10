@@ -6,96 +6,174 @@
 <div class="content">
     <div class="results">
         <h1>Menu</h1>
-        @if (Model.ComboItems.Count > 0)
+        @if (Model.ComboItems.Count() > 0 && Model.menuCategory.Contains("CretaceousCombo"))
         {
             <h2>Combos</h2>
             <div id="Combo-Items">
-                @for (int i = 0; i < Model.ComboItems.Count; i++)
+                @for (int i = 0; i < Model.ComboItems.Count(); i++)
                 {
                     <div class="menu-item">
-                        <h4>@Model.ComboItems[i].ToString()</h4>
+                        <h3 id="menuItem">@Model.ComboItems.ElementAt(i).ToString()</h3>
+                        <table>
+                            <tr>
+                                <th id="item-heading">Size</th>
+                                <th id="item-heading">Price</th>
+                                <th id="item-heading">Calories</th>
+                            </tr>
+                            <tr>
+                                <td>Small</td>
+                                <td id="item-heading">@Model.ComboItems.ElementAt(i).Price</td>
+                                <td id="calories">@Model.ComboItems.ElementAt(i).Calories</td>
+                            </tr>
+                            <tr>
+                                <td>Medium</td>
+                                @{Model.ComboItems.ElementAt(i).Size = DinoDiner.Menu.Size.Medium;}
+                                <td id="item-heading">@Model.ComboItems.ElementAt(i).Price</td>
+                                <td id="calories">@Model.ComboItems.ElementAt(i).Calories</td>
+                            </tr>
+                            <tr>
+                                <td>Large</td>
+                                @{Model.ComboItems.ElementAt(i).Size = DinoDiner.Menu.Size.Large;}
+                                <td id="item-heading">@Model.ComboItems.ElementAt(i).Price</td>
+                                <td id="calories">@Model.ComboItems.ElementAt(i).Calories</td>
+                            </tr>
+                        </table>
+                        <h4>Ingredients: </h4>
                         <ul>
-                            <li>
-                                Price- $@Model.ComboItems[i].Price
-                            </li>
-                            <li>
-                                Calories- @Model.ComboItems[i].Calories
-                            </li>
-                            <li>
-                                Ingredients- @string.Join(", ", @Model.ComboItems[i].Ingredients)
-                            </li>
+                            @foreach (string item in @Model.ComboItems.ElementAt(i).Ingredients)
+                            {
+                                <li>
+                                    @item
+                                </li>
+                            }
                         </ul>
                     </div>
                 }
             </div>
         }
-        @if (Model.EntreeItems.Count > 0)
+        @if (Model.EntreeItems.Count() > 0 && Model.menuCategory.Contains("Entree"))
         {
             <h2>Entrees</h2>
             <div id="Entree-Items">
-                @for (int i = 0; i < Model.EntreeItems.Count; i++)
+                @for (int i = 0; i < Model.EntreeItems.Count(); i++)
                 {
                     <div class="menu-item">
-                        <h4>@Model.EntreeItems[i].ToString()</h4>
+                        <h3 id="menuItem">@Model.EntreeItems.ElementAt(i).ToString()</h3>
+                        <table>
+                            <tr>
+                                <th id="item-heading">Price</th>
+                                <th id="item-heading">Calories</th>
+                            </tr>
+                            <tr>
+                                <td id="item-heading">@Model.EntreeItems.ElementAt(i).Price</td>
+                                <td id="calories">@Model.EntreeItems.ElementAt(i).Calories</td>
+                            </tr>
+                        </table>
+                        <h4>Ingredients: </h4>
                         <ul>
-                            <li>
-                                Price- $@Model.EntreeItems[i].Price
-                            </li>
-                            <li>
-                                Calories- @Model.EntreeItems[i].Calories
-                            </li>
-                            <li>
-                                Ingredients- @string.Join(", ", @Model.EntreeItems[i].Ingredients)
-                            </li>
+                            @foreach (string item in @Model.EntreeItems.ElementAt(i).Ingredients)
+                            {
+                                <li>
+                                    @item
+                                </li>
+                            }
                         </ul>
                     </div>
                 }
             </div>
         }
-        @if (Model.SideItems.Count > 0)
+        @if (Model.SideItems.Count() > 0 && Model.menuCategory.Contains("Side"))
         {
             <h2>Sides</h2>
             <div id="Side-Items">
-                @for (int i = 0; i < Model.SideItems.Count; i++)
+                @for (int i = 0; i < Model.SideItems.Count(); i++)
                 {
+                    string[] input = @Model.SideItems.ElementAt(i).ToString().Split(" ");
+                    string output = Model.SideItems.ElementAt(i).ToString().Substring(input[0].Length + 1);
                     <div class="menu-item">
-                        <h4>@Model.SideItems[i].ToString()</h4>
+                        <h3 id="menuItem">@output</h3>
+                        <table>
+                            <tr>
+                                <th id="item-heading">Size</th>
+                                <th id="item-heading">Price</th>
+                                <th id="item-heading">Calories</th>
+                            </tr>
+                            <tr>
+                                <td>Small</td>
+                                <td id="item-heading">@Model.SideItems.ElementAt(i).Price</td>
+                                <td id="calories">@Model.SideItems.ElementAt(i).Calories</td>
+                            </tr>
+                            <tr>
+                                <td>Medium</td>
+                                @{Model.SideItems.ElementAt(i).Size = DinoDiner.Menu.Size.Medium;}
+                                <td id="item-heading">@Model.SideItems.ElementAt(i).Price</td>
+                                <td id="calories">@Model.SideItems.ElementAt(i).Calories</td>
+                            </tr>
+                            <tr>
+                                <td>Large</td>
+                                @{Model.SideItems.ElementAt(i).Size = DinoDiner.Menu.Size.Large;}
+                                <td id="item-heading">@Model.SideItems.ElementAt(i).Price</td>
+                                <td id="calories">@Model.SideItems.ElementAt(i).Calories</td>
+                            </tr>
+                        </table>
+                        <h4>Ingredients: </h4>
                         <ul>
-                            <li>
-                                Price- $@Model.SideItems[i].Price
-                            </li>
-                            <li>
-                                Calories- @Model.SideItems[i].Calories
-                            </li>
-                            <li>
-                                Ingredients- @string.Join(", ", @Model.SideItems[i].Ingredients)
-                            </li>
+                            @foreach (string item in @Model.SideItems.ElementAt(i).Ingredients)
+                            {
+                                <li>
+                                    @item
+                                </li>
+                            }
                         </ul>
                     </div>
                 }
             </div>
         }
-        @if (Model.DrinkItems.Count > 0)
+        @if (Model.DrinkItems.Count() > 0 && (Model.menuCategory != null && Model.menuCategory.Contains("Drink")))
         {
             <h2>Drinks</h2>
             <div id="Drink-Items">
-                @for (int i = 0; i < Model.DrinkItems.Count; i++)
+                @for (int i = 0; i < Model.DrinkItems.Count(); i++)
                 {
-                    <div class="menu-item">
-                        <h4>@Model.DrinkItems[i].ToString()</h4>
-                        <ul>
-                            <li>
-                                Price- $@Model.DrinkItems[i].Price
-                            </li>
-                            <li>
-                                Calories- @Model.DrinkItems[i].Calories
-                            </li>
-                            <li>
-                                Ingredients- @string.Join(", ", @Model.DrinkItems[i].Ingredients)
-                            </li>
-                        </ul>
-                    </div>
-                }
+                    string [] input = @Model.DrinkItems.ElementAt(i).ToString().Split(" ");
+                    string output = Model.DrinkItems.ElementAt(i).ToString().Substring(input[0].Length + 1); 
+                <div class="menu-item">
+                <h3 id="menuItem">@output</h3>
+                <table>
+                    <tr>
+                        <th id="item-heading">Size</th>
+                        <th id="item-heading">Price</th>
+                        <th id="item-heading">Calories</th>
+                    </tr>
+                    <tr>
+                        <td>Small</td>
+                        <td id="item-heading">@Model.DrinkItems.ElementAt(i).Price</td>
+                        <td id="calories">@Model.DrinkItems.ElementAt(i).Calories</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        @{Model.DrinkItems.ElementAt(i).Size = DinoDiner.Menu.Size.Medium;}
+                        <td id="item-heading">@Model.DrinkItems.ElementAt(i).Price</td>
+                        <td id="calories">@Model.DrinkItems.ElementAt(i).Calories</td>
+                    </tr>
+                    <tr>
+                        <td>Large</td>
+                        @{Model.DrinkItems.ElementAt(i).Size = DinoDiner.Menu.Size.Large;}
+                        <td id="item-heading">@Model.DrinkItems.ElementAt(i).Price</td>
+                        <td id="calories">@Model.DrinkItems.ElementAt(i).Calories</td>
+                    </tr>
+                </table>
+                <h4>Ingredients: </h4>
+                <ul>
+                    @foreach (string item in @Model.DrinkItems.ElementAt(i).Ingredients)
+                    {
+                        <li>
+                            @item
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
             </div>
         }
     </div>
@@ -105,9 +183,9 @@
         <input type="text" name="search" value="@Model.search" />
         <input type="submit" value="Search and Filter" name="search" id="search" />
         <h4>Menu Category</h4>
-        <div class="menu-category" >
+        <div class="menu-category">
             <label>
-                <input type="checkbox" name="menuCategory" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
+                <input type="checkbox" name="menuCategory" value="CretaceousCombo" checked="@Model.menuCategory.Contains("CretaceousCombo")" />
                 Combo
             </label>
             <label>
@@ -136,10 +214,10 @@
 
         <h4>Exclude Ingredients</h4>
         <div class="exclude-ingredients">
-            @foreach(string ingredient in @Model.Menu.PossibleIngredients)
+            @foreach (string ingredient in @Model.Menu.PossibleIngredients)
             {
                 <label>
-                    <input type="checkbox" name="ingredient" value="@ingredient" checked= "@Model.ingredient.Contains(ingredient)" />
+                    <input type="checkbox" name="ingredient" value="@ingredient" checked="@Model.ingredient.Contains(ingredient)" />
                     @ingredient
                 </label>
             }

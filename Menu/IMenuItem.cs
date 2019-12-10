@@ -24,5 +24,6 @@ namespace DinoDiner.Menu
         /// a string list of ingredients each item must have
         /// </summary>
         List<string> Ingredients { get; }
+        
     }
 }

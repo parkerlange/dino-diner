@@ -58,14 +58,21 @@ namespace DinoDiner.Menu
                 MeteorMacAndCheese mac = new MeteorMacAndCheese();
                 MezzorellaSticks sticks = new MezzorellaSticks();
                 Triceritots tots = new Triceritots();
+                CretaceousCombo brotCombo = new CretaceousCombo(brot);
+                CretaceousCombo nugCombo = new CretaceousCombo(nugs);
+                CretaceousCombo pbjCombo = new CretaceousCombo(pbj);
+                CretaceousCombo wingCombo = new CretaceousCombo(wings);
+                CretaceousCombo burgerCombo = new CretaceousCombo(burger);
+                CretaceousCombo kingCombo = new CretaceousCombo(king);
+                CretaceousCombo wrapCombo = new CretaceousCombo(wrap);
                 // we put these objects in an array of objects
                 Object[] menuItems = new Object[]
                 {
+                    brotCombo, nugCombo, pbjCombo, wingCombo, burgerCombo, kingCombo, wrapCombo,
                     brot, nugs, pbj, wings, burger, king, wrap,
                     java, soda, tea, water,
                     fries, mac, sticks, tots
                 };
-
                 List<IMenuItem> availableMenuItems = new List<IMenuItem>();
                 foreach (IMenuItem item in menuItems)
                 {
@@ -93,11 +100,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// this is the list of all sides currently available on the menu
         /// </summary>
-        public List<IMenuItem> AvailableSides
+        public List<Side> AvailableSides
         {
             get
             {
-                List<IMenuItem> availableSides = new List<IMenuItem>();
+                List<Side> availableSides = new List<Side>();
                 foreach (IMenuItem side in AvailableMenuItems)
                     if (side is Side)
                         availableSides.Add((Side)side);
@@ -108,11 +115,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// this is a list of all drinks on the list currently available
         /// </summary>
-        public List<IMenuItem> AvailableDrinks
+        public List<Drink> AvailableDrinks
         {
             get
             {
-                List<IMenuItem> availableDrinks = new List<IMenuItem>();
+                List<Drink> availableDrinks = new List<Drink>();
                 foreach (IMenuItem drink in AvailableMenuItems)
                     if (drink is Drink)
                     availableDrinks.Add((Drink)drink);
@@ -123,11 +130,11 @@ namespace DinoDiner.Menu
         /// <summary>
         /// this is the list of all of the combos that are available on the menu
         /// </summary>
-        public List<IMenuItem> AvailableCombos
+        public List<CretaceousCombo> AvailableCombos
         {
             get
             {
-                List<IMenuItem> availableCombos = new List<IMenuItem>();
+                List<CretaceousCombo> availableCombos = new List<CretaceousCombo>();
                 foreach (IMenuItem entree in AvailableMenuItems)
                 {
                     if (entree is Entree)
